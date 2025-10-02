@@ -4,28 +4,26 @@ import { FadeIn } from './fade-in';
 import { useI18n } from '@/context/i18n';
 
 const skillsList = [
-  'HTML',
-  'CSS',
   'JavaScript',
   'TypeScript',
   'Python',
   'React',
   'Next.js',
   'Nest.js',
-  'Node.js',
-  'Express',
   'MongoDB',
   'SQL',
   'PostgreSQL',
   'Docker',
   'AWS',
   'GCP',
-  'Firebase',
   'Git',
   'Tailwind CSS',
   'REST APIs',
   'GraphQL',
   'First AI',
+  'GitFlow',
+  'Scrum',
+  'Kanban'
 ];
 
 export function Skills() {

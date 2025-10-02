@@ -7,15 +7,15 @@
     "experience": "Experience",
     "downloadCV": "Download CV",
     "openMenu": "Open menu",
-    "cvFile": "/Kedein-Rodriguez-CV-EN.pdf"
+    "cvFile": "/test-cv.pdf"
   },
   "hero": {
     "alt": "Kedein Rodriguez Gatica",
-    "subtitle": "Full-Stack Developer specializing in creating modern, intuitive, and high-performance digital experiences."
+    "subtitle": "Software Engineer | Scalable Architectures | APIs & Cloud (AWS/GCP)"
   },
   "about": {
     "title": "About Me",
-    "description": "I am a passionate full-stack web developer with experience in creating modern and scalable web applications. I love learning new technologies and applying them to solve real-world problems. My goal is to build products that are not only functional but also offer an excellent user experience."
+    "description": "Software Engineer with experience building scalable and secure applications, ranging from monoliths to microservices and event-driven architectures. Skilled in technologies such as NestJS, Python, Django, Next.js, PostgreSQL, GCP, and AWS, applying Clean Architecture principles, CI/CD, and security best practices. Experienced in API design, third-party integrations, and implementing AI-powered solutions. Recognized for managing end-to-end projects, collaborating with cross-functional teams, and consistently delivering business value."
   },
   "skills": {
     "title": "Skills"
