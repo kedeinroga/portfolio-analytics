@@ -5,7 +5,6 @@
     "skills": "Habilidades",
     "projects": "Proyectos",
     "experience": "Experiencia",
-    "contact": "Contacto",
     "downloadCV": "Descargar CV",
     "openMenu": "Abrir menú",
     "cvFile": "/Kedein-Rodriguez-CV.pdf"
@@ -93,32 +92,6 @@
         ]
       }
     ]
-  },
-  "contact": {
-    "title": "Contacto",
-    "description": "¿Tienes un proyecto en mente o quieres colaborar? No dudes en enviarme un mensaje.",
-    "form": {
-      "name": {
-        "label": "Nombre",
-        "placeholder": "Tu nombre",
-        "error": "El nombre debe tener al menos 2 caracteres."
-      },
-      "email": {
-        "label": "Email",
-        "placeholder": "tu@email.com",
-        "error": "Por favor, introduce una dirección de correo válida."
-      },
-      "message": {
-        "label": "Mensaje",
-        "placeholder": "Cuéntame sobre tu idea...",
-        "error": "El mensaje debe tener al menos 10 caracteres."
-      },
-      "submit": "Enviar Mensaje"
-    },
-    "toast": {
-      "title": "¡Mensaje enviado!",
-      "description": "Gracias por contactarme. Te responderé pronto."
-    }
   },
   "footer": {
     "rights": "Todos los derechos reservados."

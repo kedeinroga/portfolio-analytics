@@ -30,7 +30,7 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
       {
-        protocol: 'httpshttps',
+        protocol: 'https',
         hostname: 'kedeinroga.github.io',
         port: '',
         pathname: '/**',

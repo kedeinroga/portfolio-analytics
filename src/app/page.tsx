@@ -1,14 +1,17 @@
+'use client';
 import { Header } from '@/components/header';
 import { Hero } from '@/components/hero';
 import { About } from '@/components/about';
 import { Skills } from '@/components/skills';
 import { Projects } from '@/components/projects';
 import { Experience } from '@/components/experience';
-import { Contact } from '@/components/contact';
 import { Footer } from '@/components/footer';
 import { SectionTracker } from '@/components/section-tracker';
+import { useI18n } from '@/context/i18n';
 
 export default function Home() {
+  const { t } = useI18n();
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
@@ -26,9 +29,6 @@ export default function Home() {
           </SectionTracker>
           <SectionTracker sectionName="experience" id="experience">
             <Experience />
-          </SectionTracker>
-          <SectionTracker sectionName="contact" id="contact">
-            <Contact />
           </SectionTracker>
         </div>
       </main>

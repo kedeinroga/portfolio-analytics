@@ -25,11 +25,10 @@ export function Header() {
   const { t, setLocale, locale } = useI18n();
 
   const navLinks = [
-    { name: t('header.about'), href: '#about' },
-    { name: t('header.skills'), href: '#skills' },
+    { name: 'header.about', href: '#about' },
+    { name: 'header.skills', href: '#skills' },
     { name: 'header.projects', href: '#projects' },
     { name: 'header.experience', href: '#experience' },
-    { name: 'header.contact', href: '#contact' },
   ];
 
   useEffect(() => {
