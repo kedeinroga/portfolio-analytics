@@ -18,23 +18,26 @@ import { useToast } from '@/hooks/use-toast';
 import { logEvent } from '@/lib/analytics';
 import { FadeIn } from './fade-in';
 import { useI18n } from '@/context/i18n';
+import ReCAPTCHA from 'react-google-recaptcha';
+import { useState } from 'react';
 
-const formSchema = (t: (key: string) => string) => z.object({
-  name: z.string().min(2, {
-    message: t('contact.form.name.error'),
-  }),
-  email: z.string().email({
-    message: t('contact.form.email.error'),
-  }),
-  message: z.string().min(10, {
-    message: t('contact.form.message.error'),
-  }),
-});
-
+const formSchema = (t: (key: string) => string) =>
+  z.object({
+    name: z.string().min(2, {
+      message: t('contact.form.name.error'),
+    }),
+    email: z.string().email({
+      message: t('contact.form.email.error'),
+    }),
+    message: z.string().min(10, {
+      message: t('contact.form.message.error'),
+    }),
+  });
 
 export function Contact() {
   const { toast } = useToast();
   const { t } = useI18n();
+  const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
 
   const currentFormSchema = formSchema(t);
 
@@ -48,13 +51,14 @@ export function Contact() {
   });
 
   function onSubmit(values: z.infer<typeof currentFormSchema>) {
-    console.log('Form submitted:', values);
+    console.log('Form submitted:', { ...values, recaptchaValue });
     logEvent('contact_form_submission', values);
     toast({
       title: t('contact.toast.title'),
       description: t('contact.toast.description'),
     });
     form.reset();
+    setRecaptchaValue(null);
   }
 
   return (
@@ -75,7 +79,10 @@ export function Contact() {
                 <FormItem>
                   <FormLabel>{t('contact.form.name.label')}</FormLabel>
                   <FormControl>
-                    <Input placeholder={t('contact.form.name.placeholder')} {...field} />
+                    <Input
+                      placeholder={t('contact.form.name.placeholder')}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -88,7 +95,10 @@ export function Contact() {
                 <FormItem>
                   <FormLabel>{t('contact.form.email.label')}</FormLabel>
                   <FormControl>
-                    <Input placeholder={t('contact.form.email.placeholder')} {...field} />
+                    <Input
+                      placeholder={t('contact.form.email.placeholder')}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -101,13 +111,22 @@ export function Contact() {
                 <FormItem>
                   <FormLabel>{t('contact.form.message.label')}</FormLabel>
                   <FormControl>
-                    <Textarea placeholder={t('contact.form.message.placeholder')} {...field} />
+                    <Textarea
+                      placeholder={t('contact.form.message.placeholder')}
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button type="submit">{t('contact.form.submit')}</Button>
+            <ReCAPTCHA
+              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+              onChange={setRecaptchaValue}
+            />
+            <Button type="submit" disabled={!recaptchaValue}>
+              {t('contact.form.submit')}
+            </Button>
           </form>
         </Form>
       </div>
