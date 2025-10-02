@@ -15,20 +15,24 @@ const firebaseConfig = {
 
 let app: FirebaseApp | undefined;
 
-// This check prevents initializing the app more than once.
 if (firebaseConfig.projectId) {
-  if (!getApps().length) {
-    app = initializeApp(firebaseConfig);
+  if (getApps().length === 0) {
+    try {
+      app = initializeApp(firebaseConfig);
+    } catch (e) {
+      console.error("Failed to initialize Firebase", e);
+    }
   } else {
     app = getApps()[0];
   }
 } else {
-  console.error("Firebase config is not loaded or projectId is missing.");
+  console.log("Firebase config is not loaded or projectId is missing. Skipping initialization.");
 }
+
 
 const analytics: Promise<Analytics | null> =
   typeof window !== 'undefined' && app
-    ? isSupported().then((yes) => (yes ? getAnalytics(app) : null))
+    ? isSupported().then((yes) => (yes ? getAnalytics(app!) : null))
     : Promise.resolve(null);
 
 export { app, analytics };
