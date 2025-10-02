@@ -1,5 +1,5 @@
 'use client';
-import { Header } from '@/components/header';
+import dynamic from 'next/dynamic';
 import { Hero } from '@/components/hero';
 import { About } from '@/components/about';
 import { Skills } from '@/components/skills';
@@ -8,6 +8,8 @@ import { Experience } from '@/components/experience';
 import { Footer } from '@/components/footer';
 import { SectionTracker } from '@/components/section-tracker';
 import { useI18n } from '@/context/i18n';
+
+const Header = dynamic(() => import('@/components/header').then(mod => mod.Header), { ssr: false });
 
 export default function Home() {
   const { t } = useI18n();
