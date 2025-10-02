@@ -13,19 +13,18 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-let app: FirebaseApp;
+let app: FirebaseApp | undefined;
+
 // This check prevents initializing the app more than once.
-if (!getApps().length) {
-  if (firebaseConfig.projectId) {
+if (firebaseConfig.projectId) {
+  if (!getApps().length) {
     app = initializeApp(firebaseConfig);
   } else {
-    console.error("Firebase config is not loaded or projectId is missing.");
-    // You could throw an error here or handle it gracefully.
+    app = getApps()[0];
   }
 } else {
-  app = getApps()[0];
+  console.error("Firebase config is not loaded or projectId is missing.");
 }
-
 
 const analytics: Promise<Analytics | null> =
   typeof window !== 'undefined' && app
