@@ -3,32 +3,44 @@
     {
       "id": "profilePicture",
       "description": "A professional headshot of Kedein Rodriguez Gatica.",
-      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdHxlbnwwfHx8fDE3NTkzNjQ0OTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://kedeinroga.github.io/portfolio/img/main_photo.png",
       "imageHint": "professional headshot"
     },
     {
-      "id": "eccomerce-tenis",
-      "description": "Thumbnail for a sneaker e-commerce website project.",
-      "imageUrl": "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxlY29tbWVyY2UlMjB3ZWJzaXRlfGVufDB8fHx8MTc1OTM4MzE5N3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "ecommerce website"
+      "id": "medical-appointment-scheduling",
+      "description": "Thumbnail for a medical appointment scheduling system project.",
+      "imageUrl": "https://images.unsplash.com/photo-1718128120354-049b29ac88ed?q=80&w=2368&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Db=rb-4.1.0&q=80&w=1080",
+      "imageHint": "medical appointment system"
     },
     {
-      "id": "app-clima",
-      "description": "Thumbnail for a weather forecast application project.",
-      "imageUrl": "https://images.unsplash.com/photo-1630260667842-830a17d12ec9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3ZWF0aGVyJTIwZm9yZWNhc3R8ZW58MHx8fHwxNzU5MzM3MjI1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "weather forecast"
+      "id": "bank-cli",
+      "description": "Thumbnail for a CLI-based banking system project.",
+      "imageUrl": "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Db=rb-4.1.0&q=80&w=1080",
+      "imageHint": "banking terminal CLI"
     },
     {
-      "id": "citas-veterinaria",
-      "description": "Thumbnail for a veterinary appointment management app project.",
-      "imageUrl": "https://images.unsplash.com/photo-1649941437429-eb6e25ff5a61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxwZXQlMjBoZWFsdGh8ZW58MHx8fHwxNzU5NDM2MTgxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "pet health"
+      "id": "portfolio-stock",
+      "description": "Thumbnail for a stock portfolio management system project.",
+      "imageUrl": "https://images.unsplash.com/photo-1651340981821-b519ad14da7c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Db=rb-4.1.0&q=80&w=1080",
+      "imageHint": "stock market portfolio"
     },
     {
-      "id": "cotizador-criptos",
-      "description": "Thumbnail for a cryptocurrency price checker project.",
-      "imageUrl": "https://images.unsplash.com/photo-1723785735443-16ffd373f398?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjcnlwdG9jdXJyZW5jeSUyMGNoYXJ0fGVufDB8fHx8MTc1OTQzNjE4Mnww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "cryptocurrency chart"
+      "id": "challenge-poke",
+      "description": "Thumbnail for a Pokémon challenge app project.",
+      "imageUrl": "https://images.unsplash.com/photo-1638613067237-b1127ef06c00?q=80&w=2982&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Db=rb-4.1.0&q=80&w=1080",
+      "imageHint": "pokemon app"
+    },
+    {
+      "id": "get-that-home",
+      "description": "Thumbnail for a real estate platform project.",
+      "imageUrl": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDE5ODJ8MHwxfHNlYXJjaHwyfHxyZWFsJTIwZXN0YXRlfGVufDB8fHx8MTc1OTQ1MjI1Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "real estate app"
+    },
+    {
+      "id": "econuni-2016",
+      "description": "Thumbnail for the official 2016 UNI Electronic Engineering Congress website.",
+      "imageUrl": "https://images.unsplash.com/photo-1560439514-07abbb294a86?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3DD=rb-4.1.0&q=80&w=1080",
+      "imageHint": "university congress or conference hall"
     }
   ]
 }

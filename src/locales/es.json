@@ -23,21 +23,29 @@
     "title": "Proyectos",
     "code": "Código",
     "demo": "Demo",
-    "eccomerce-tenis": {
-      "title": "E-commerce de Zapatillas",
-      "description": "Una tienda online de zapatillas con funcionalidades de catálogo, carrito de compras y gestión de estado con Context API."
+    "medical-appointment-scheduling": {
+      "title": "Sistema de Gestión de Citas Médicas",
+      "description": "Aplicación web completa para agendar, modificar y cancelar citas médicas, optimizando el flujo de trabajo y la gestión de pacientes en centros de salud."
     },
-    "app-clima": {
-      "title": "App del Clima",
-      "description": "Aplicación que muestra el pronóstico del tiempo actual de cualquier ciudad del mundo, consumiendo datos de una API externa."
+    "bank-cli": {
+      "title": "Interfaz de Línea de Comandos (CLI) Bancaria",
+      "description": "Herramienta de consola para simular operaciones bancarias básicas como transferencias, depósitos y consultas de saldo, ideal para fines educativos o de simulación."
     },
-    "citas-veterinaria": {
-      "title": "Gestor de Citas Veterinarias",
-      "description": "Herramienta para administrar citas de pacientes en una clínica veterinaria, utilizando Local Storage para persistencia de datos."
+    "portfolio-stock": {
+      "title": "Rastreador de Portafolio de Inversiones",
+      "description": "Aplicación para monitorear el rendimiento de un portafolio de acciones en tiempo real, utilizando datos de APIs financieras externas y visualización de métricas clave."
     },
-    "cotizador-criptos": {
-      "title": "Cotizador de Criptomonedas",
-      "description": "Aplicación para consultar en tiempo real el valor de diferentes criptomonedas en varias divisas."
+    "challenge-poke": {
+      "title": "Desafío Pokémon (Pokedex)",
+      "description": "Proyecto interactivo desarrollado como un desafío, Pokedex completa para buscar, filtrar y ver información detallada sobre diferentes Pokémon utilizando una API pública."
+    },
+    "get-that-home": {
+      "title": "Buscador Inmobiliario",
+      "description": "Plataforma de búsqueda de propiedades (casas, apartamentos) con filtros avanzados, interfaz amigable y visualización de detalles relevantes para la toma de decisiones."
+    },
+    "econuni-2016": {
+      "title": "Web Oficial de Congreso UNI (2016)",
+      "description": "Sitio web oficial del Congreso de Ingeniería Electrónica (ECONUNI) de la Universidad Nacional de Ingeniería (UNI) del año 2016, desarrollado bajo el patrón MVC."
     }
   },
   "contact": {

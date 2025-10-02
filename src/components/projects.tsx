@@ -17,27 +17,39 @@ import { useI18n } from '@/context/i18n';
 
 const projectsData = [
   {
-    id: 'eccomerce-tenis',
-    tags: ['React', 'Tailwind CSS', 'Context API'],
-    githubUrl: 'https://github.com/kedeinroga/Eccomerce-Tenis',
+    id: 'medical-appointment-scheduling',
+    tags: ['Typescript', 'Serverless Framework', 'Jest', 'Lambda', 'DynamoDB', 'API Gateway', 'SNS', 'SQS', 'EventBridge', 'RDS', 'GitHub Actions', 'Hexagonal/Clean Architecture'],
+    githubUrl: 'https://github.com/kedeinroga/medical-appointment-scheduling',
     liveUrl: null,
   },
   {
-    id: 'app-clima',
-    tags: ['React', 'API Rest'],
-    githubUrl: 'https://github.com/kedeinroga/App-Clima',
+    id: 'bank-cli',
+    tags: ['Typescript', 'Jest', 'CLI'],
+    githubUrl: 'https://github.com/kedeinroga/bank-cli',
     liveUrl: null,
   },
   {
-    id: 'citas-veterinaria',
-    tags: ['React', 'Local Storage', 'Vite'],
-    githubUrl: 'https://github.com/kedeinroga/Citas-Veterinaria',
+    id: 'portfolio-stock',
+    tags: ['Node', 'Typescript'],
+    githubUrl: 'https://github.com/kedeinroga/portfolio-stock',
     liveUrl: null,
   },
   {
-    id: 'cotizador-criptos',
-    tags: ['React', 'Styled Components', 'API Rest'],
-    githubUrl: 'https://github.com/kedeinroga/cotizador-criptos',
+    id: 'challenge-poke',
+    tags: ['Python', 'Pytest', 'PokéAPI'],
+    githubUrl: 'https://github.com/kedeinroga/challenge-poke',
+    liveUrl: null,
+  },
+  {
+    id: 'get-that-home',
+    tags: ['React', 'Styled Components', 'GraphQL', 'Apollo Client', 'Ruby on Rails'],
+    githubUrl: 'https://github.com/kedeinroga/get-that-home',
+    liveUrl: null,
+  },
+  {
+    id: 'econuni-2016',
+    tags: ['PHP', 'CodeIgniter', 'HTML', 'CSS', 'MVC'],
+    githubUrl: 'https://github.com/kedeinroga/econuni-2016',
     liveUrl: null,
   },
 ];

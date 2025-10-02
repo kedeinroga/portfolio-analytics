@@ -23,21 +23,29 @@
     "title": "Projects",
     "code": "Code",
     "demo": "Demo",
-    "eccomerce-tenis": {
-      "title": "Sneakers E-commerce",
-      "description": "An online sneaker store with catalog features, a shopping cart, and state management using Context API."
+    "medical-appointment-scheduling": {
+      "title": "Medical Appointment Scheduling System",
+      "description": "A complete web application to schedule, modify, and cancel medical appointments, optimizing the workflow and patient management in health centers."
     },
-    "app-clima": {
-      "title": "Weather App",
-      "description": "Application that displays the current weather forecast for any city in the world, consuming data from an external API."
+    "bank-cli": {
+      "title": "Bank Command Line Interface (CLI)",
+      "description": "A console tool to simulate basic banking operations such as transfers, deposits, and balance inquiries, ideal for educational or simulation purposes."
     },
-    "citas-veterinaria": {
-      "title": "Veterinary Appointment Manager",
-      "description": "A tool to manage patient appointments in a veterinary clinic, using Local Storage for data persistence."
+    "portfolio-stock": {
+      "title": "Investment Portfolio Tracker",
+      "description": "An application to monitor the performance of a stock portfolio in real-time, using data from external financial APIs and visualizing key metrics."
     },
-    "cotizador-criptos": {
-      "title": "Cryptocurrency Price Checker",
-      "description": "Application to check the real-time value of different cryptocurrencies in various currencies."
+    "challenge-poke": {
+      "title": "Pokémon Challenge (Pokedex)",
+      "description": "An interactive project developed as a challenge, likely a full Pokedex to search, filter, and view detailed information about different Pokémon using a public API."
+    },
+    "get-that-home": {
+      "title": "Get That Home",
+      "description": "A property search platform (houses, apartments) with advanced filters, a user-friendly interface, and visualization of relevant details for decision-making."
+    },
+    "econuni-2016": {
+      "title": "UNI Congress Official Website (2016)",
+      "description": "Official website for the Electronic Engineering Congress (ECONUNI) of the National University of Engineering (UNI) from 2016, developed using the MVC pattern."
     }
   },
   "contact": {
