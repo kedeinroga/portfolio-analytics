@@ -14,14 +14,22 @@ const firebaseConfig = {
 };
 
 let app: FirebaseApp;
-if (getApps().length === 0) {
-  app = initializeApp(firebaseConfig);
+// This check prevents initializing the app more than once.
+if (!getApps().length) {
+  if (firebaseConfig.projectId) {
+    app = initializeApp(firebaseConfig);
+  } else {
+    console.error("Firebase config is not loaded or projectId is missing.");
+    // You could throw an error here or handle it gracefully.
+  }
 } else {
   app = getApps()[0];
 }
 
-const analytics: Promise<Analytics | null> = isSupported().then((yes) =>
-  yes ? getAnalytics(app) : null
-);
+
+const analytics: Promise<Analytics | null> =
+  typeof window !== 'undefined' && app
+    ? isSupported().then((yes) => (yes ? getAnalytics(app) : null))
+    : Promise.resolve(null);
 
 export { app, analytics };
