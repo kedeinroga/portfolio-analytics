@@ -1,8 +1,10 @@
+
 {
   "header": {
     "about": "Sobre Mí",
     "skills": "Habilidades",
     "projects": "Proyectos",
+    "experience": "Experiencia",
     "contact": "Contacto",
     "downloadCV": "Descargar CV",
     "openMenu": "Abrir menú",
@@ -44,9 +46,53 @@
       "description": "Plataforma de búsqueda de propiedades (casas, apartamentos) con filtros avanzados, interfaz amigable y visualización de detalles relevantes para la toma de decisiones."
     },
     "econuni-2016": {
-      "title": "Web Oficial de Congreso UNI (2016)",
+      "title": "Web Oficial de Congreso ECON UNI (2016)",
       "description": "Sitio web oficial del Congreso de Ingeniería Electrónica (ECONUNI) de la Universidad Nacional de Ingeniería (UNI) del año 2016, desarrollado bajo el patrón MVC."
     }
+  },
+  "experience": {
+    "title": "Experiencia Laboral",
+    "jobs": [
+      {
+        "company": "Nomed",
+        "role": "Ingeniero de software senior",
+        "dates": "Mayo 2025 - Actualidad",
+        "description": [
+          "Dirección del desarrollo completo de productos desde la ideación hasta su despliegue en producción, asegurando calidad técnica y cumplimiento de objetivos.",
+          "Uso de tecnologías modernas como NestJS para el backend y Next.js para el frontend, en un monorepo con arquitectura limpia, integrando servicios de inteligencia artificial (First AI) como parte central de la propuesta educativa."
+        ]
+      },
+      {
+        "company": "Betterfly",
+        "role": "Ingeniero de software",
+        "dates": "Abril 2022 - Mayo 2025",
+        "description": [
+          "Desarrollo e integración de servicios y APIs en Python, Node.js, AWS y GCP, para funcionalidades internas y externas del sistema.",
+          "Desarrollo y mantenimiento de monolito con Python y Django.",
+          "Diseño de integraciones con servicios de terceros usando REST y eventos asíncronos (Pub/Sub).",
+          "Implementación de herramientas de soporte y onboarding automático para clientes y usuarios.",
+          "Coordinación directa con equipos no técnicos (Soporte, Customer Success y Ventas) para habilitar flujos automatizados y monitoreables.",
+          "Backend con NestJS y Google Cloud Platform: Desarrollo, mantenimiento y despliegue de sistemas backend con Clean Architecture, utilizando servicios de GCP.",
+          "Configuración de microservicios con Docker y despliegue automatizado con GitHub Actions, arquitectura basada en eventos, mejorando escalabilidad, rendimiento y adaptabilidad a las necesidades del negocio."
+        ],
+        "awards": [
+          "2° lugar en Hackathon de IA de Betterfly 2023 (integración de GPT en buscador de beneficios)."
+        ]
+      },
+      {
+        "company": "Kunder",
+        "role": "Full Stack Developer",
+        "dates": "Abril 2021 - Abril 2022",
+        "description": [
+          "Desarrollo de funcionalidades tanto en frontend como backend, usando Angular, Python y bases de datos SQL y NoSQL.",
+          "Integración de APIs externas para funcionalidades específicas de clientes institucionales.",
+          "Participación en procesos ágiles y apoyo al equipo de QA y soporte en validación técnica."
+        ],
+        "awards": [
+          "3° lugar en Hackatón HR21 de Socialab: Creación de una solución gamificada para reducir la rotación de talento en startups, basada en beneficios personalizados."
+        ]
+      }
+    ]
   },
   "contact": {
     "title": "Contacto",

@@ -3,6 +3,7 @@ import { Hero } from '@/components/hero';
 import { About } from '@/components/about';
 import { Skills } from '@/components/skills';
 import { Projects } from '@/components/projects';
+import { Experience } from '@/components/experience';
 import { Contact } from '@/components/contact';
 import { Footer } from '@/components/footer';
 import { SectionTracker } from '@/components/section-tracker';
@@ -22,6 +23,9 @@ export default function Home() {
           </SectionTracker>
           <SectionTracker sectionName="projects" id="projects">
             <Projects />
+          </SectionTracker>
+          <SectionTracker sectionName="experience" id="experience">
+            <Experience />
           </SectionTracker>
           <SectionTracker sectionName="contact" id="contact">
             <Contact />
