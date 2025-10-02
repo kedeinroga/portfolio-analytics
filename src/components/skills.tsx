@@ -1,5 +1,7 @@
+'use client';
 import { Badge } from '@/components/ui/badge';
 import { FadeIn } from './fade-in';
+import { useI18n } from '@/context/i18n';
 
 const skillsList = [
   'HTML',
@@ -20,10 +22,11 @@ const skillsList = [
 ];
 
 export function Skills() {
+  const { t } = useI18n();
   return (
     <FadeIn>
       <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-        Habilidades
+        {t('skills.title')}
       </h2>
       <div className="mt-10 flex flex-wrap gap-3">
         {skillsList.map((skill) => (

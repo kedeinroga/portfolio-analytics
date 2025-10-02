@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import { Toaster } from '@/components/ui/toaster';
 import './globals.css';
+import { I18nProvider } from '@/context/i18n';
 
 export const metadata: Metadata = {
   title: "Kedein's Digital Domain",
-  description: 'Portfolio de Kedein Rodriguez Gatica, Desarrollador Full-Stack.',
+  description: "Portfolio of Kedein Rodriguez Gatica, Full-Stack Developer.",
 };
 
 export default function RootLayout({
@@ -23,7 +24,9 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body antialiased">
-        {children}
+        <I18nProvider>
+          {children}
+        </I18nProvider>
         <Toaster />
       </body>
     </html>

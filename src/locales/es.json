@@ -1,0 +1,72 @@
+{
+  "header": {
+    "about": "Sobre Mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "downloadCV": "Descargar CV",
+    "openMenu": "Abrir menú",
+    "cvFile": "/Kedein-Rodriguez-CV.pdf"
+  },
+  "hero": {
+    "alt": "Kedein Rodriguez Gatica",
+    "subtitle": "Desarrollador Full-Stack especializado en la creación de experiencias digitales modernas, intuitivas y de alto rendimiento."
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "description": "Soy un apasionado desarrollador web full stack con experiencia en la creación de aplicaciones web modernas y escalables. Me encanta aprender nuevas tecnologías y aplicarlas para resolver problemas del mundo real. Mi objetivo es construir productos que no solo sean funcionales, sino que también ofrezcan una excelente experiencia de usuario."
+  },
+  "skills": {
+    "title": "Habilidades"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "code": "Código",
+    "demo": "Demo",
+    "eccomerce-tenis": {
+      "title": "E-commerce de Zapatillas",
+      "description": "Una tienda online de zapatillas con funcionalidades de catálogo, carrito de compras y gestión de estado con Context API."
+    },
+    "app-clima": {
+      "title": "App del Clima",
+      "description": "Aplicación que muestra el pronóstico del tiempo actual de cualquier ciudad del mundo, consumiendo datos de una API externa."
+    },
+    "citas-veterinaria": {
+      "title": "Gestor de Citas Veterinarias",
+      "description": "Herramienta para administrar citas de pacientes en una clínica veterinaria, utilizando Local Storage para persistencia de datos."
+    },
+    "cotizador-criptos": {
+      "title": "Cotizador de Criptomonedas",
+      "description": "Aplicación para consultar en tiempo real el valor de diferentes criptomonedas en varias divisas."
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "description": "¿Tienes un proyecto en mente o quieres colaborar? No dudes en enviarme un mensaje.",
+    "form": {
+      "name": {
+        "label": "Nombre",
+        "placeholder": "Tu nombre",
+        "error": "El nombre debe tener al menos 2 caracteres."
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "tu@email.com",
+        "error": "Por favor, introduce una dirección de correo válida."
+      },
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "Cuéntame sobre tu idea...",
+        "error": "El mensaje debe tener al menos 10 caracteres."
+      },
+      "submit": "Enviar Mensaje"
+    },
+    "toast": {
+      "title": "¡Mensaje enviado!",
+      "description": "Gracias por contactarme. Te responderé pronto."
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados."
+  }
+}

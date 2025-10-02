@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import {
   Card,
@@ -12,40 +13,29 @@ import { Button } from '@/components/ui/button';
 import { Github, ExternalLink } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { FadeIn } from './fade-in';
+import { useI18n } from '@/context/i18n';
 
-const projects = [
+const projectsData = [
   {
     id: 'eccomerce-tenis',
-    title: 'E-commerce de Zapatillas',
-    description:
-      'Una tienda online de zapatillas con funcionalidades de catálogo, carrito de compras y gestión de estado con Context API.',
     tags: ['React', 'Tailwind CSS', 'Context API'],
     githubUrl: 'https://github.com/kedeinroga/Eccomerce-Tenis',
     liveUrl: null,
   },
   {
     id: 'app-clima',
-    title: 'App del Clima',
-    description:
-      'Aplicación que muestra el pronóstico del tiempo actual de cualquier ciudad del mundo, consumiendo datos de una API externa.',
     tags: ['React', 'API Rest'],
     githubUrl: 'https://github.com/kedeinroga/App-Clima',
     liveUrl: null,
   },
   {
     id: 'citas-veterinaria',
-    title: 'Gestor de Citas Veterinarias',
-    description:
-      'Herramienta para administrar citas de pacientes en una clínica veterinaria, utilizando Local Storage para persistencia de datos.',
     tags: ['React', 'Local Storage', 'Vite'],
     githubUrl: 'https://github.com/kedeinroga/Citas-Veterinaria',
     liveUrl: null,
   },
   {
     id: 'cotizador-criptos',
-    title: 'Cotizador de Criptomonedas',
-    description:
-      'Aplicación para consultar en tiempo real el valor de diferentes criptomonedas en varias divisas.',
     tags: ['React', 'Styled Components', 'API Rest'],
     githubUrl: 'https://github.com/kedeinroga/cotizador-criptos',
     liveUrl: null,
@@ -53,10 +43,18 @@ const projects = [
 ];
 
 export function Projects() {
+  const { t } = useI18n();
+
+  const projects = projectsData.map(project => ({
+    ...project,
+    title: t(`projects.${project.id}.title`),
+    description: t(`projects.${project.id}.description`),
+  }));
+
   return (
     <FadeIn>
       <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-        Proyectos
+        {t('projects.title')}
       </h2>
       <div className="mt-10 grid gap-8 sm:grid-cols-1 md:grid-cols-2">
         {projects.map((project) => {
@@ -97,7 +95,7 @@ export function Projects() {
                     rel="noopener noreferrer"
                   >
                     <Github className="mr-2 h-4 w-4" />
-                    Código
+                    {t('projects.code')}
                   </a>
                 </Button>
                 {project.liveUrl && (
@@ -108,7 +106,7 @@ export function Projects() {
                       rel="noopener noreferrer"
                     >
                       <ExternalLink className="mr-2 h-4 w-4" />
-                      Demo
+                      {t('projects.demo')}
                     </a>
                   </Button>
                 )}

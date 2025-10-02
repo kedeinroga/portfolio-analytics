@@ -1,11 +1,14 @@
+'use client';
 import Image from 'next/image';
 import { Button } from './ui/button';
 import { Github, Linkedin } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { FadeIn } from './fade-in';
+import { useI18n } from '@/context/i18n';
 
 export function Hero() {
   const profileImage = PlaceHolderImages.find((img) => img.id === 'profilePicture');
+  const { t } = useI18n();
 
   return (
     <section className="py-20 text-center md:py-32">
@@ -13,7 +16,7 @@ export function Hero() {
         {profileImage && (
           <Image
             src={profileImage.imageUrl}
-            alt="Kedein Rodriguez Gatica"
+            alt={t('hero.alt')}
             width={128}
             height={128}
             className="mx-auto mb-6 rounded-full"
@@ -24,8 +27,7 @@ export function Hero() {
           Kedein Rodriguez Gatica
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-          Desarrollador Full-Stack especializado en la creación de experiencias
-          digitales modernas, intuitivas y de alto rendimiento.
+          {t('hero.subtitle')}
         </p>
         <div className="mt-10 flex items-center justify-center gap-4">
           <Button variant="outline" asChild>

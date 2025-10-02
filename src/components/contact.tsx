@@ -17,23 +17,29 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { logEvent } from '@/lib/analytics';
 import { FadeIn } from './fade-in';
+import { useI18n } from '@/context/i18n';
 
-const formSchema = z.object({
+const formSchema = (t: (key: string) => string) => z.object({
   name: z.string().min(2, {
-    message: 'El nombre debe tener al menos 2 caracteres.',
+    message: t('contact.form.name.error'),
   }),
   email: z.string().email({
-    message: 'Por favor, introduce una dirección de correo válida.',
+    message: t('contact.form.email.error'),
   }),
   message: z.string().min(10, {
-    message: 'El mensaje debe tener al menos 10 caracteres.',
+    message: t('contact.form.message.error'),
   }),
 });
 
+
 export function Contact() {
   const { toast } = useToast();
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const { t } = useI18n();
+
+  const currentFormSchema = formSchema(t);
+
+  const form = useForm<z.infer<typeof currentFormSchema>>({
+    resolver: zodResolver(currentFormSchema),
     defaultValues: {
       name: '',
       email: '',
@@ -41,12 +47,12 @@ export function Contact() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit(values: z.infer<typeof currentFormSchema>) {
     console.log('Form submitted:', values);
     logEvent('contact_form_submission', values);
     toast({
-      title: '¡Mensaje enviado!',
-      description: 'Gracias por contactarme. Te responderé pronto.',
+      title: t('contact.toast.title'),
+      description: t('contact.toast.description'),
     });
     form.reset();
   }
@@ -54,11 +60,10 @@ export function Contact() {
   return (
     <FadeIn>
       <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-        Contacto
+        {t('contact.title')}
       </h2>
       <p className="mt-6 text-lg leading-8 text-muted-foreground">
-        ¿Tienes un proyecto en mente o quieres colaborar? No dudes en enviarme un
-        mensaje.
+        {t('contact.description')}
       </p>
       <div className="mt-10">
         <Form {...form}>
@@ -68,9 +73,9 @@ export function Contact() {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Nombre</FormLabel>
+                  <FormLabel>{t('contact.form.name.label')}</FormLabel>
                   <FormControl>
-                    <Input placeholder="Tu nombre" {...field} />
+                    <Input placeholder={t('contact.form.name.placeholder')} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -81,9 +86,9 @@ export function Contact() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>{t('contact.form.email.label')}</FormLabel>
                   <FormControl>
-                    <Input placeholder="tu@email.com" {...field} />
+                    <Input placeholder={t('contact.form.email.placeholder')} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -94,15 +99,15 @@ export function Contact() {
               name="message"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Mensaje</FormLabel>
+                  <FormLabel>{t('contact.form.message.label')}</FormLabel>
                   <FormControl>
-                    <Textarea placeholder="Cuéntame sobre tu idea..." {...field} />
+                    <Textarea placeholder={t('contact.form.message.placeholder')} {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button type="submit">Enviar Mensaje</Button>
+            <Button type="submit">{t('contact.form.submit')}</Button>
           </form>
         </Form>
       </div>

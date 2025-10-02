@@ -1,0 +1,72 @@
+{
+  "header": {
+    "about": "About Me",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "downloadCV": "Download CV",
+    "openMenu": "Open menu",
+    "cvFile": "/Kedein-Rodriguez-CV-EN.pdf"
+  },
+  "hero": {
+    "alt": "Kedein Rodriguez Gatica",
+    "subtitle": "Full-Stack Developer specializing in creating modern, intuitive, and high-performance digital experiences."
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I am a passionate full-stack web developer with experience in creating modern and scalable web applications. I love learning new technologies and applying them to solve real-world problems. My goal is to build products that are not only functional but also offer an excellent user experience."
+  },
+  "skills": {
+    "title": "Skills"
+  },
+  "projects": {
+    "title": "Projects",
+    "code": "Code",
+    "demo": "Demo",
+    "eccomerce-tenis": {
+      "title": "Sneakers E-commerce",
+      "description": "An online sneaker store with catalog features, a shopping cart, and state management using Context API."
+    },
+    "app-clima": {
+      "title": "Weather App",
+      "description": "Application that displays the current weather forecast for any city in the world, consuming data from an external API."
+    },
+    "citas-veterinaria": {
+      "title": "Veterinary Appointment Manager",
+      "description": "A tool to manage patient appointments in a veterinary clinic, using Local Storage for data persistence."
+    },
+    "cotizador-criptos": {
+      "title": "Cryptocurrency Price Checker",
+      "description": "Application to check the real-time value of different cryptocurrencies in various currencies."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Have a project in mind or want to collaborate? Feel free to send me a message.",
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name",
+        "error": "Name must be at least 2 characters."
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "you@email.com",
+        "error": "Please enter a valid email address."
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell me about your idea...",
+        "error": "Message must be at least 10 characters."
+      },
+      "submit": "Send Message"
+    },
+    "toast": {
+      "title": "Message sent!",
+      "description": "Thanks for contacting me. I will get back to you soon."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

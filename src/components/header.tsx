@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Download, Github, Linkedin, Menu, X } from 'lucide-react';
+import { Download, Github, Linkedin, Menu, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   Sheet,
@@ -10,18 +10,26 @@ import {
   SheetTrigger,
   SheetClose,
 } from '@/components/ui/sheet';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 import { logEvent } from '@/lib/analytics';
 import { cn } from '@/lib/utils';
-
-const navLinks = [
-  { name: 'Sobre Mí', href: '#about' },
-  { name: 'Habilidades', href: '#skills' },
-  { name: 'Proyectos', href: '#projects' },
-  { name: 'Contacto', href: '#contact' },
-];
+import { useI18n } from '@/context/i18n';
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const { t, setLocale, locale } = useI18n();
+
+  const navLinks = [
+    { name: t('header.about'), href: '#about' },
+    { name: t('header.skills'), href: '#skills' },
+    { name: 'header.projects', href: '#projects' },
+    { name: 'header.contact', href: '#contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,31 +59,63 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden items-center gap-6 md:flex">
+          <nav className="hidden items-center gap-4 md:flex">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
               >
-                {link.name}
+                {t(link.name)}
               </a>
             ))}
             <Button asChild onClick={handleDownloadCV} size="sm">
-              <a href="/Kedein-Rodriguez-CV.pdf" download>
+              <a href={t('header.cvFile')} download>
                 <Download className="mr-2 h-4 w-4" />
-                Descargar CV
+                {t('header.downloadCV')}
               </a>
             </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Globe className="h-5 w-5" />
+                  <span className="sr-only">Change language</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => setLocale('es')}>
+                  Español
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLocale('en')}>
+                  English
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </nav>
 
           {/* Mobile Navigation */}
-          <div className="md:hidden">
+          <div className="flex items-center gap-2 md:hidden">
+             <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Globe className="h-5 w-5" />
+                  <span className="sr-only">Change language</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => setLocale('es')}>
+                  Español
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setLocale('en')}>
+                  English
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
                   <Menu />
-                  <span className="sr-only">Abrir menú</span>
+                  <span className="sr-only">{t('header.openMenu')}</span>
                 </Button>
               </SheetTrigger>
               <SheetContent>
@@ -86,14 +126,14 @@ export function Header() {
                         href={link.href}
                         className="text-lg font-medium text-foreground transition-colors hover:text-primary"
                       >
-                        {link.name}
+                        {t(link.name)}
                       </a>
                     </SheetClose>
                   ))}
                   <Button asChild onClick={handleDownloadCV} className="mt-4">
-                    <a href="/Kedein-Rodriguez-CV.pdf" download>
+                    <a href={t('header.cvFile')} download>
                       <Download className="mr-2 h-4 w-4" />
-                      Descargar CV
+                      {t('header.downloadCV')}
                     </a>
                   </Button>
                   <div className="mt-8 flex justify-center gap-4 border-t pt-6">
