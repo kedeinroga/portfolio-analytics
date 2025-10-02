@@ -5,9 +5,10 @@
     "skills": "Skills",
     "projects": "Projects",
     "experience": "Experience",
+    "contact": "Contact Me",
     "downloadCV": "Download CV",
     "openMenu": "Open menu",
-    "cvFile": "/cv-kedein-rodriguez-en.pdf"
+    "cvFile": "/cvs/cv-kedein-rodriguez-en.pdf"
   },
   "hero": {
     "alt": "Kedein Rodriguez Gatica",
@@ -92,6 +93,11 @@
         ]
       }
     ]
+  },
+  "contact": {
+    "title": "Contact Me",
+    "description": "If you'd like to work with me or have any questions, don’t hesitate to get in touch.",
+    "availability": "I am available for development projects, collaborations, and consultations."
   },
   "footer": {
     "rights": "All rights reserved."

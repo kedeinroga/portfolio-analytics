@@ -29,6 +29,7 @@ export function Header() {
     { name: 'header.skills', href: '#skills' },
     { name: 'header.projects', href: '#projects' },
     { name: 'header.experience', href: '#experience' },
+    { name: 'header.contact', href: '#contact' },
   ];
 
   useEffect(() => {
