@@ -3,6 +3,7 @@ import { Toaster } from '@/components/ui/toaster';
 import './globals.css';
 import { Providers } from './providers';
 import { GA_TRACKING_ID } from '@/lib/gtag';
+import AnalyticsTracker from '@/components/AnalyticsTracker'; // Importar el componente
 
 export const metadata: Metadata = {
   title: "Kedein's Digital Domain",
@@ -46,6 +47,7 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased">
         <Providers>
+          <AnalyticsTracker /> {/* Añadir el componente aquí */}
           {children}
         </Providers>
         <Toaster />
