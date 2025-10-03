@@ -19,16 +19,19 @@ import {
 } from 'recharts';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { signOut } from 'next-auth/react';
+import { signIn, signOut, useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { app } from '@/lib/firebase';
 import { processAnalyticsData } from '@/lib/analyticsProcessor';
+import { useRouter } from 'next/navigation';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#AF19FF'];
 
 export default function Dashboard() {
   const [chartData, setChartData] = useState<any>(null);
+  const { data: session, status } = useSession();
+  const router = useRouter();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -42,8 +45,24 @@ export default function Dashboard() {
       }
     };
 
-    fetchData();
-  }, []);
+    if (status === 'authenticated') {
+      fetchData();
+    }
+  }, [status]);
+
+  if (status === 'loading') {
+    return <p>Loading...</p>;
+  }
+
+  if (status === 'unauthenticated') {
+    return (
+      <div className="container mx-auto py-10 text-center">
+        <h1 className="text-3xl font-bold">Access Denied</h1>
+        <p className="mb-4">You need to be logged in to view this page.</p>
+        <Button onClick={() => signIn('google')}>Login with Google</Button>
+      </div>
+    );
+  }
 
   return (
     <div className="container mx-auto py-10">
@@ -53,7 +72,7 @@ export default function Dashboard() {
           <Button asChild>
             <Link href="/">Back to Home</Link>
           </Button>
-          <Button onClick={() => signOut()}>Logout</Button>
+          <Button onClick={() => signOut({ callbackUrl: '/' })}>Logout</Button>
         </div>
       </div>
       {chartData ? (
