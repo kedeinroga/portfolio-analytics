@@ -6,7 +6,6 @@ export const processAnalyticsData = (data: any[]) => {
   const geographicLocation: { [key: string]: number } = {};
 
   data.forEach(item => {
-    // FIX: Convert Firestore Timestamp to JavaScript Date object
     const timestamp = item.timestamp?.toDate ? item.timestamp.toDate() : new Date(item.timestamp);
 
     if (item.eventType === 'page_view') {
@@ -24,11 +23,13 @@ export const processAnalyticsData = (data: any[]) => {
     }
 
     if (item.eventType === 'page_view_specific_section') {
-      sectionInteractions[item.section] = (sectionInteractions[item.section] || 0) + 1;
+      if (item.section && item.section.length > 0) {
+        sectionInteractions[item.section] = (sectionInteractions[item.section] || 0) + 1;
+      }
     }
 
-    if (item.country) {
-      geographicLocation[item.country] = (geographicLocation[item.country] || 0) + 1;
+    if (item.location && item.location.country) {
+      geographicLocation[item.location.country] = (geographicLocation[item.location.country] || 0) + 1;
     }
   });
 
