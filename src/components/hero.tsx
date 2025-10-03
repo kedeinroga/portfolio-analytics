@@ -6,6 +6,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { FadeIn } from './fade-in';
 import { useI18n } from '@/context/i18n';
 import { logCvDownload } from '@/lib/analytics';
+import { cn } from '@/lib/utils';
 
 export function Hero() {
   const profileImage = PlaceHolderImages.find((img) => img.id === 'profilePicture');
@@ -36,34 +37,51 @@ export function Hero() {
           {t('hero.subtitle')}
         </p>
         <div className="mt-10 flex items-center justify-center gap-4">
-          <Button variant="outline" asChild>
+          <Button
+            variant="outline"
+            asChild
+            className="w-10 px-0 sm:w-auto sm:px-4"
+          >
             <a
               href="https://www.linkedin.com/in/kedein-rodriguez-gatica/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Linkedin className="mr-2 h-4 w-4" />
-              LinkedIn
+              <Linkedin className="h-4 w-4" />
+              <span className="hidden sm:ml-2 sm:inline">LinkedIn</span>
             </a>
           </Button>
-          <Button variant="outline" asChild>
+          <Button
+            variant="outline"
+            asChild
+            className="w-10 px-0 sm:w-auto sm:px-4"
+          >
             <a
               href="https://github.com/kedeinroga"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Github className="mr-2 h-4 w-4" />
-              GitHub
+              <Github className="h-4 w-4" />
+              <span className="hidden sm:ml-2 sm:inline">GitHub</span>
             </a>
           </Button>
-          <Button variant="outline" asChild>
+          <Button
+            variant="outline"
+            asChild
+            className={cn(
+              'md:hidden',
+              'w-10 px-0 sm:w-auto sm:px-4' // Hidden on medium screens and up
+            )}
+          >
             <a
               href={t('header.cvFile')}
               download
               onClick={handleDownload}
             >
-              <Download className="mr-2 h-4 w-4" />
-              {t('header.downloadCV')}
+              <Download className="h-4 w-4" />
+              <span className="hidden sm:ml-2 sm:inline">
+                {t('header.downloadCV')}
+              </span>
             </a>
           </Button>
         </div>
