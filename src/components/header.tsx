@@ -7,6 +7,9 @@ import { Button } from '@/components/ui/button';
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
   SheetTrigger,
   SheetClose,
 } from '@/components/ui/sheet';
@@ -120,6 +123,12 @@ export function Header() {
                 </Button>
               </SheetTrigger>
               <SheetContent>
+                 <SheetHeader className="sr-only">
+                  <SheetTitle>{t('header.menuTitle')}</SheetTitle>
+                  <SheetDescription>
+                    {t('header.menuDescription')}
+                  </SheetDescription>
+                </SheetHeader>
                 <nav className="mt-8 flex flex-col gap-6">
                   {navLinks.map((link) => (
                     <SheetClose asChild key={link.name}>

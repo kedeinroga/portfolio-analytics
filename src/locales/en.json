@@ -1,4 +1,3 @@
-
 {
   "header": {
     "about": "About Me",
@@ -8,6 +7,8 @@
     "contact": "Contact Me",
     "downloadCV": "Download CV",
     "openMenu": "Open menu",
+    "menuTitle": "Main Menu",
+    "menuDescription": "A list of navigation links to browse the different sections of the page.",
     "cvFile": "/cvs/cv-kedein-rodriguez-en.pdf"
   },
   "hero": {
