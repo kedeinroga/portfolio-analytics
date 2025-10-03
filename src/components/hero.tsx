@@ -1,14 +1,19 @@
 'use client';
 import Image from 'next/image';
 import { Button } from './ui/button';
-import { Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin, Download } from 'lucide-react';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { FadeIn } from './fade-in';
 import { useI18n } from '@/context/i18n';
+import { logCvDownload } from '@/lib/analytics';
 
 export function Hero() {
   const profileImage = PlaceHolderImages.find((img) => img.id === 'profilePicture');
   const { t } = useI18n();
+
+  const handleDownload = () => {
+    logCvDownload();
+  };
 
   return (
     <section className="py-20 text-center md:py-32">
@@ -48,6 +53,16 @@ export function Hero() {
             >
               <Github className="mr-2 h-4 w-4" />
               GitHub
+            </a>
+          </Button>
+          <Button variant="outline" asChild>
+            <a
+              href={t('header.cvFile')}
+              download
+              onClick={handleDownload}
+            >
+              <Download className="mr-2 h-4 w-4" />
+              {t('header.downloadCV')}
             </a>
           </Button>
         </div>

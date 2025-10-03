@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import { Toaster } from '@/components/ui/toaster';
 import './globals.css';
-import { I18nProvider } from '@/context/i18n';
+import { Providers } from './providers';
+import { GA_TRACKING_ID } from '@/lib/gtag';
 
 export const metadata: Metadata = {
   title: "Kedein's Digital Domain",
-  description: "Portfolio of Kedein Rodriguez Gatica, Full-Stack Developer.",
+  description: "Portfolio of Kedein Rodriguez Gatica, Software Engineer.",
 };
 
 export default function RootLayout({
@@ -22,11 +23,31 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
           rel="stylesheet"
         />
+        {GA_TRACKING_ID && (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${GA_TRACKING_ID}', {
+                    page_path: window.location.pathname,
+                  });
+                `,
+              }}
+            />
+          </>
+        )}
       </head>
       <body className="font-body antialiased">
-        <I18nProvider>
+        <Providers>
           {children}
-        </I18nProvider>
+        </Providers>
         <Toaster />
       </body>
     </html>

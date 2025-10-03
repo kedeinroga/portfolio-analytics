@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect, type RefObject } from 'react';
+import { logPageViewSpecificSection } from '@/lib/analytics';
 
 export function useOnScreen(
   ref: RefObject<HTMLElement>,
@@ -12,8 +13,8 @@ export function useOnScreen(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIntersecting(true);
-          // We can unobserve after it's visible once to avoid re-triggering
           if (ref.current) {
+            logPageViewSpecificSection(ref.current.id);
             observer.unobserve(ref.current);
           }
         }

@@ -2,7 +2,7 @@
 
 import { useRef, useEffect } from 'react';
 import { useOnScreen } from '@/hooks/use-on-screen';
-import { logEvent } from '@/lib/analytics';
+import { logPageViewSpecificSection } from '@/lib/analytics';
 
 type SectionTrackerProps = {
   sectionName: string;
@@ -23,7 +23,7 @@ export function SectionTracker({
 
   useEffect(() => {
     if (isVisible && !hasBeenVisible.current) {
-      logEvent('page_view_specific_section', { section: sectionName });
+      logPageViewSpecificSection(sectionName);
       hasBeenVisible.current = true;
     }
   }, [isVisible, sectionName]);
