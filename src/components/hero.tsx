@@ -25,6 +25,7 @@ export function Hero() {
             width={128}
             height={128}
             className="mx-auto mb-6 rounded-full"
+            style={{ width: 'auto', height: 'auto' }}
             data-ai-hint={profileImage.imageHint}
           />
         )}

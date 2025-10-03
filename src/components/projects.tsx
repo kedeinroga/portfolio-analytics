@@ -81,6 +81,7 @@ export function Projects() {
                     src={projectImage.imageUrl}
                     alt={project.title}
                     fill
+                    sizes={projectImage.sizes}
                     className="rounded-t-lg object-cover"
                     data-ai-hint={projectImage.imageHint}
                   />
