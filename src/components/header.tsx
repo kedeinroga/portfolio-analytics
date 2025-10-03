@@ -16,7 +16,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { logEvent } from '@/lib/analytics';
+import { logCvDownload } from '@/lib/analytics';
 import { cn } from '@/lib/utils';
 import { useI18n } from '@/context/i18n';
 
@@ -41,7 +41,7 @@ export function Header() {
   }, []);
 
   const handleDownloadCV = () => {
-    logEvent('cv_download');
+    logCvDownload();
   };
 
   return (
