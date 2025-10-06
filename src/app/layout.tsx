@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: "https://kedein.com",
     images: [
       {
-        url: "https://kedein.com/og-image.png",
+        url: "https://kedein.com/avatar.png",
         width: 800,
         height: 600,
         alt: "Kedein Rodriguez - Software Engineer",
