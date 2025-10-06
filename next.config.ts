@@ -1,6 +1,10 @@
 // Load environment variables based on NODE_ENV
-const envFile = process.env.NODE_ENV === 'production' ? '.env.production' : '.env.local';
-require('dotenv').config({ path: `./${envFile}` });
+// Note: Firebase App Hosting automatically provides environment variables from apphosting.yaml
+// Only load .env files in development (local) environment
+if (process.env.NODE_ENV !== 'production') {
+  const envFile = '.env.local';
+  require('dotenv').config({ path: `./${envFile}` });
+}
 
 import type {NextConfig} from 'next';
 
@@ -13,10 +17,8 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   
-  // Environment-specific configuration
-  env: {
-    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
-  },
+  // Environment variables - Firebase App Hosting handles these automatically
+  // No need to explicitly define them here as they're set in apphosting.yaml
   
   // Output configuration for Firebase App Hosting
   ...(process.env.NODE_ENV === 'production' && {
