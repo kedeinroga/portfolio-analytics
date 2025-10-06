@@ -6,8 +6,25 @@ import { GA_TRACKING_ID } from '@/lib/gtag';
 import AnalyticsTracker from '@/components/AnalyticsTracker'; // Importar el componente
 
 export const metadata: Metadata = {
-  title: "Kedein's Digital Domain",
+  title: "Kedein Rodriguez - Software Engineer",
   description: "Portfolio of Kedein Rodriguez Gatica, Software Engineer.",
+  keywords: "Software Engineer, Backend Developer, Portfolio, Kedein Rodriguez Gatica, Full-Stack Developer, Web Developer",
+  authors: [{ name: 'Kedein Rodriguez Gatica', url: 'https://kedein.com' }],
+  openGraph: {
+    title: "Kedein Rodriguez - Software Engineer",
+    description: "Portfolio of Kedein Rodriguez Gatica, Software Engineer.",
+    url: "https://kedein.com",
+    images: [
+      {
+        url: "https://kedein.com/og-image.png",
+        width: 800,
+        height: 600,
+        alt: "Kedein Rodriguez - Software Engineer",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -16,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="en">
       <head>
         <link rel="icon" href="/favicon.svg" sizes="any" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
