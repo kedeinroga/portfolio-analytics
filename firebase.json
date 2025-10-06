@@ -1,0 +1,20 @@
+{
+  "hosting": {
+    "public": ".next/static",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },
+  "functions": {
+    "source": ".",
+    "runtime": "nodejs18"
+  },
+  "rewrites": [
+    {
+      "source": "**",
+      "function": "nextjsFunc"
+    }
+  ]
+}

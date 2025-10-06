@@ -19,8 +19,11 @@ export function useGeolocation() {
   useEffect(() => {
     const getGeolocation = async () => {
       try {
+        // Las rutas API de Next.js siempre son relativas, funcionan igual en todos los ambientes
+        const apiUrl = '/api/geolocation';
+          
         // Primero intentar obtener la geolocalización desde nuestro API del servidor
-        const serverResponse = await fetch('/api/geolocation');
+        const serverResponse = await fetch(apiUrl);
         
         if (serverResponse.ok) {
           const serverData = await serverResponse.json();
