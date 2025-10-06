@@ -19,17 +19,23 @@ export function Contact() {
         <p className="mt-4 text-lg text-muted-foreground">
           {t('contact.availability')}
         </p>
-        <div className="mt-8 flex justify-center gap-4">
-          <Button variant="ghost" size="icon" asChild>
-            <a href="https://github.com/kedeinroga" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
-              <Github className="h-8 w-8" />
-            </a>
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
-            <a href="https://www.linkedin.com/in/kedein-rodriguez-gatica/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-              <Linkedin className="h-8 w-8" />
-            </a>
-          </Button>
+        <div className="mt-8 flex justify-center gap-8">
+          <div className="flex flex-col items-center gap-2">
+            <Button variant="ghost" size="icon" asChild>
+              <a href="https://github.com/kedeinroga" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                <Github className="h-16 w-16" />
+              </a>
+            </Button>
+            <p className="text-muted-foreground">{t('contact.github')}</p>
+          </div>
+          <div className="flex flex-col items-center gap-2">
+            <Button variant="ghost" size="icon" asChild>
+              <a href="https://www.linkedin.com/in/kedein-rodriguez-gatica/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                <Linkedin className="h-16 w-16" />
+              </a>
+            </Button>
+            <p className="text-muted-foreground">{t('contact.linkedin')}</p>
+          </div>
         </div>
       </div>
     </section>

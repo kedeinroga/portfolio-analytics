@@ -98,7 +98,9 @@
   "contact": {
     "title": "Contáctame",
     "description": "Si quieres trabajar conmigo o tienes alguna pregunta, no dudes en ponerte en contacto.",
-    "availability": "Estoy disponible para proyectos de desarrollo, colaboraciones y consultas."
+    "availability": "Estoy disponible para proyectos de desarrollo, colaboraciones y consultas.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
   },
   "footer": {
     "rights": "Todos los derechos reservados."
