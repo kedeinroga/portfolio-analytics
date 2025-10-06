@@ -2,14 +2,12 @@
 import Image from 'next/image';
 import { Button } from './ui/button';
 import { Github, Linkedin, Download } from 'lucide-react';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { FadeIn } from './fade-in';
 import { useI18n } from '@/context/i18n';
 import { logCvDownload } from '@/lib/analytics';
 import { cn } from '@/lib/utils';
 
 export function Hero() {
-  const profileImage = PlaceHolderImages.find((img) => img.id === 'profilePicture');
   const { t } = useI18n();
 
   const handleDownload = () => {
@@ -19,17 +17,14 @@ export function Hero() {
   return (
     <section className="py-20 text-center md:py-32">
       <FadeIn>
-        {profileImage && (
-          <Image
-            src={profileImage.imageUrl}
-            alt={t('hero.alt')}
-            width={128}
-            height={128}
-            className="mx-auto mb-6 rounded-full"
-            style={{ width: 'auto', height: 'auto' }}
-            data-ai-hint={profileImage.imageHint}
-          />
-        )}
+        <Image
+          src="/avatar.png"
+          alt={t('hero.alt')}
+          width={200}
+          height={200}
+          className="mx-auto mb-6 rounded-full"
+          priority
+        />
         <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
           Kedein Rodriguez Gatica
         </h1>
