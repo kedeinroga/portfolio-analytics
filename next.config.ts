@@ -1,4 +1,7 @@
-require('dotenv').config({ path: './.env.local' });
+// Load environment variables based on NODE_ENV
+const envFile = process.env.NODE_ENV === 'production' ? '.env.production' : '.env.local';
+require('dotenv').config({ path: `./${envFile}` });
+
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
@@ -9,6 +12,19 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  
+  // Environment-specific configuration
+  env: {
+    NODE_ENV: process.env.NODE_ENV,
+    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+  },
+  
+  // Output configuration for Firebase App Hosting
+  ...(process.env.NODE_ENV === 'production' && {
+    output: 'standalone',
+    trailingSlash: false,
+  }),
+  
   async headers() {
     return [
       {
@@ -16,7 +32,9 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: 'Access-Control-Allow-Origin',
-            value: '*',
+            value: process.env.NODE_ENV === 'production' 
+              ? process.env.NEXT_PUBLIC_APP_URL || '*' 
+              : '*',
           },
           {
             key: 'Access-Control-Allow-Methods',
@@ -24,7 +42,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: 'Access-Control-Allow-Headers',
-            value: 'Content-Type, Authorization, X-Forwarded-For, X-Real-IP, X-Client-IP',
+            value: 'Content-Type, Authorization, X-Forwarded-For, X-Real-IP, X-Client-IP, CF-Connecting-IP',
           },
         ],
       },
