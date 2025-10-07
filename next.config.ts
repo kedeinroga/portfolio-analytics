@@ -1,9 +1,7 @@
-// Load environment variables based on NODE_ENV
-// Note: Firebase App Hosting automatically provides environment variables from apphosting.yaml
-// Only load .env files in development (local) environment
+// Load environment variables only in development
+// Firebase App Hosting provides environment variables from apphosting.yaml in production
 if (process.env.NODE_ENV !== 'production') {
-  const envFile = '.env.local';
-  require('dotenv').config({ path: `./${envFile}` });
+  require('dotenv').config({ path: './.env.local' });
 }
 
 import type {NextConfig} from 'next';
@@ -21,10 +19,20 @@ const nextConfig: NextConfig = {
   // No need to explicitly define them here as they're set in apphosting.yaml
   
   // Output configuration for Firebase App Hosting
-  ...(process.env.NODE_ENV === 'production' && {
-    output: 'standalone',
-    trailingSlash: false,
-  }),
+  // Note: Firebase App Hosting handles deployment, no need for 'standalone' output
+  trailingSlash: false,
+  
+  // Webpack configuration to handle path aliases (critical for Firebase App Hosting)
+  webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    // Ensure path aliases are properly resolved
+    if (!config.resolve.alias) {
+      config.resolve.alias = {};
+    }
+    
+    config.resolve.alias['@'] = require('path').resolve(__dirname, 'src');
+    
+    return config;
+  },
   
   async headers() {
     return [
