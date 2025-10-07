@@ -1,40 +1,45 @@
 import NextAuth from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
 
+// Durante el build, usar valores por defecto para evitar errores
+const isBuildTime = process.env.NODE_ENV === 'production' && !process.env.NEXTAUTH_SECRET;
+
 // Verificar variables de entorno críticas
 const requiredEnvVars = {
-  GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
-  GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
-  NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
-  NEXTAUTH_URL: process.env.NEXTAUTH_URL,
-  ADMIN_EMAIL: process.env.ADMIN_EMAIL,
+  GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID || (isBuildTime ? "build-placeholder" : ""),
+  GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET || (isBuildTime ? "build-placeholder" : ""),
+  NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET || (isBuildTime ? "build-placeholder-secret" : ""),
+  NEXTAUTH_URL: process.env.NEXTAUTH_URL || (isBuildTime ? "https://kedein.com" : ""),
+  ADMIN_EMAIL: process.env.ADMIN_EMAIL || (isBuildTime ? "admin@example.com" : ""),
 };
 
-// Verificar que todas las variables críticas estén configuradas
-const missingVars = Object.entries(requiredEnvVars)
-  .filter(([key, value]) => !value)
-  .map(([key]) => key);
+// Solo verificar variables críticas si NO estamos en build time
+if (!isBuildTime) {
+  const missingVars = Object.entries(requiredEnvVars)
+    .filter(([key, value]) => !value || value.includes('build-placeholder'))
+    .map(([key]) => key);
 
-if (missingVars.length > 0) {
-  console.error('NextAuth: Missing required environment variables:', missingVars);
+  if (missingVars.length > 0) {
+    console.error('NextAuth: Missing required environment variables:', missingVars);
+  }
+
+  // Log para debug
+  console.log('NextAuth Environment Check:', {
+    NODE_ENV: process.env.NODE_ENV,
+    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+    GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID ? 'SET' : 'NOT SET',
+    GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET ? 'SET' : 'NOT SET',
+    NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET ? 'SET' : 'NOT SET',
+    ADMIN_EMAIL: process.env.ADMIN_EMAIL ? 'SET' : 'NOT SET',
+    isBuildTime
+  });
 }
-
-// Log para debug
-console.log('NextAuth Environment Check:', {
-  NODE_ENV: process.env.NODE_ENV,
-  NEXTAUTH_URL: process.env.NEXTAUTH_URL,
-  GOOGLE_CLIENT_ID: requiredEnvVars.GOOGLE_CLIENT_ID ? 'SET' : 'NOT SET',
-  GOOGLE_CLIENT_SECRET: requiredEnvVars.GOOGLE_CLIENT_SECRET ? 'SET' : 'NOT SET',
-  NEXTAUTH_SECRET: requiredEnvVars.NEXTAUTH_SECRET ? 'SET' : 'NOT SET',
-  ADMIN_EMAIL: requiredEnvVars.ADMIN_EMAIL ? 'SET' : 'NOT SET',
-  missingVars: missingVars.length > 0 ? missingVars : 'none'
-});
 
 const handler = NextAuth({
   providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID || "",
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
+      clientId: requiredEnvVars.GOOGLE_CLIENT_ID,
+      clientSecret: requiredEnvVars.GOOGLE_CLIENT_SECRET,
     }),
   ],
   callbacks: {
@@ -64,7 +69,7 @@ const handler = NextAuth({
     },
   },
   // Configuraciones esenciales para producción
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: requiredEnvVars.NEXTAUTH_SECRET,
   pages: {
     error: '/auth/error',
   },
