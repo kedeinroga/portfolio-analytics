@@ -4,33 +4,78 @@ runConfig:
   memoryMiB: 512
 
 env:
+  # Variables disponibles en BUILD y RUNTIME
   - variable: NODE_ENV
     value: production
+    availability:
+      - BUILD
+      - RUNTIME
+      
+  # Secretos - SOLO disponibles en RUNTIME (no durante BUILD)
   - variable: GOOGLE_CLIENT_SECRET
     secret: GOOGLE_CLIENT_SECRET
+    availability:
+      - RUNTIME
   - variable: GOOGLE_CLIENT_ID
     secret: GOOGLE_CLIENT_ID
+    availability:
+      - RUNTIME
   - variable: ADMIN_EMAIL
     secret: ADMIN_EMAIL
+    availability:
+      - RUNTIME
   - variable: NEXTAUTH_URL
     secret: NEXTAUTH_URL
+    availability:
+      - RUNTIME
   - variable: NEXTAUTH_SECRET
     secret: NEXTAUTH_SECRET
+    availability:
+      - RUNTIME
+      
+  # Variables públicas - disponibles en BUILD y RUNTIME
   - variable: NEXT_PUBLIC_APP_URL
     value: https://kedein.com
+    availability:
+      - BUILD
+      - RUNTIME
   - variable: NEXT_PUBLIC_FIREBASE_API_KEY
     value: AIzaSyAEQzWzdfe1qYrj8o8N0-Nm-8cOhgEb9mI
+    availability:
+      - BUILD
+      - RUNTIME
   - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
     value: portfolio-9f6d9.firebaseapp.com
+    availability:
+      - BUILD
+      - RUNTIME
   - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
     value: portfolio-9f6d9
+    availability:
+      - BUILD
+      - RUNTIME
   - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
     value: portfolio-9f6d9.firebasestorage.app
+    availability:
+      - BUILD
+      - RUNTIME
   - variable: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
     value: "663643082033"
+    availability:
+      - BUILD
+      - RUNTIME
   - variable: NEXT_PUBLIC_FIREBASE_APP_ID
     value: 1:663643082033:web:75319c1227614e3cc6f410
+    availability:
+      - BUILD
+      - RUNTIME
   - variable: NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
     value: G-C6VHHEWF46
+    availability:
+      - BUILD
+      - RUNTIME
   - variable: NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
     value: G-C6VHHEWF46
+    availability:
+      - BUILD
+      - RUNTIME
