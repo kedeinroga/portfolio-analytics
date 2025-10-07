@@ -49,17 +49,8 @@ export async function GET(request: NextRequest) {
 
     const clientIp = getClientIP(request);
 
-    // Log para depuración - mostrar todos los headers relevantes
-    console.log("All relevant headers:");
-    ['x-forwarded-for', 'x-real-ip', 'x-client-ip', 'cf-connecting-ip', 'x-vercel-forwarded-for'].forEach(header => {
-      const value = request.headers.get(header);
-      if (value) console.log(`  ${header}: ${value}`);
-    });
-    console.log("Determined client IP:", clientIp);
-
     // Si no encontramos la IP del cliente, no podemos proporcionar geolocalización precisa
     if (!clientIp) {
-      console.warn("No se pudo determinar la IP real del cliente desde los headers");
       return NextResponse.json({
         error: "No se pudo determinar la ubicación del cliente",
         message: "IP del cliente no detectada en los headers de la solicitud",
@@ -68,14 +59,11 @@ export async function GET(request: NextRequest) {
     }
 
     const apiUrl = `http://ip-api.com/json/${clientIp}`;
-    console.log("Fetching geolocation for IP:", clientIp);
-
     const response = await fetch(apiUrl);
     const data = await response.json();
 
     // Manejar casos donde la IP es inválida o la API falla
     if (data.status === 'fail' || !response.ok) {
-      console.warn(`Geolocation failed for IP: ${clientIp}. Reason: ${data.message || response.statusText}`);
       return NextResponse.json({
         error: "Geolocalización fallida",
         message: data.message || response.statusText,

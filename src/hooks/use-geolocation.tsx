@@ -78,8 +78,6 @@ export function useGeolocation() {
               setLoading(false);
             },
             async (error) => {
-              console.warn('Geolocation permission denied or failed:', error.message);
-              
               // Como último recurso, usar un servicio externo que detecte la IP del cliente
               try {
                 const response = await fetch('https://ipapi.co/json/');
