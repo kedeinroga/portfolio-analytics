@@ -1,31 +1,68 @@
+# Firebase App Hosting configuration
 runConfig:
   maxInstances: 1
   cpu: 1
   memoryMiB: 512
-  env:
-    - variable: NODE_ENV
-      value: production
-    - variable: GOOGLE_CLIENT_SECRET
-      secret: GOOGLE_CLIENT_SECRET
-    - variable: GOOGLE_CLIENT_ID
-      secret: GOOGLE_CLIENT_ID
-    - variable: ADMIN_EMAIL
-      secret: ADMIN_EMAIL
-    - variable: NEXTAUTH_URL
-      secret: NEXTAUTH_URL
-    - variable: NEXTAUTH_SECRET
-      secret: NEXTAUTH_SECRET
 
-buildConfig:
-  buildCommand: npm run build
-  env:
-    NODE_ENV: production
-    NEXT_PUBLIC_APP_URL: https://kedein.com
-    NEXT_PUBLIC_FIREBASE_API_KEY: AIzaSyAEQzWzdfe1qYrj8o8N0-Nm-8cOhgEb9mI
-    NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: portfolio-9f6d9.firebaseapp.com
-    NEXT_PUBLIC_FIREBASE_PROJECT_ID: portfolio-9f6d9
-    NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET: portfolio-9f6d9.firebasestorage.app
-    NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID: "663643082033"
-    NEXT_PUBLIC_FIREBASE_APP_ID: 1:663643082033:web:75319c1227614e3cc6f410
-    NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID: G-C6VHHEWF46
-    NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: G-C6VHHEWF46
+# Environment variables and secrets (at root level)
+env:
+  - variable: NODE_ENV
+    value: production
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: GOOGLE_CLIENT_SECRET
+    secret: GOOGLE_CLIENT_SECRET
+  - variable: GOOGLE_CLIENT_ID
+    secret: GOOGLE_CLIENT_ID
+  - variable: ADMIN_EMAIL
+    secret: ADMIN_EMAIL
+  - variable: NEXTAUTH_URL
+    secret: NEXTAUTH_URL
+  - variable: NEXTAUTH_SECRET
+    secret: NEXTAUTH_SECRET
+  - variable: NEXT_PUBLIC_APP_URL
+    value: https://kedein.com
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_API_KEY
+    value: AIzaSyAEQzWzdfe1qYrj8o8N0-Nm-8cOhgEb9mI
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+    value: portfolio-9f6d9.firebaseapp.com
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+    value: portfolio-9f6d9
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+    value: portfolio-9f6d9.firebasestorage.app
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+    value: "663643082033"
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_APP_ID
+    value: 1:663643082033:web:75319c1227614e3cc6f410
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
+    value: G-C6VHHEWF46
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
+    value: G-C6VHHEWF46
+    availability:
+      - BUILD
+      - RUNTIME
