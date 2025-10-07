@@ -18,8 +18,6 @@ if (firebaseConfig.projectId) {
   } else {
     app = getApps()[0];
   }
-} else {
-  console.log("Firebase config is not loaded or projectId is missing. Skipping initialization.");
 }
 
 
