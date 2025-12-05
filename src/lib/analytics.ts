@@ -1,7 +1,7 @@
 import { analytics } from "./firebase";
 import { logEvent as logFirebaseEvent } from "firebase/analytics";
 import * as gtag from './gtag';
-import { getFirestore, collection, addDoc } from "firebase/firestore"; 
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 import { app } from './firebase';
 
 const db = app ? getFirestore(app) : null;
@@ -54,9 +54,9 @@ export const logPageView = (url: string) => {
   if (url === '/') {
     const logRootView = async () => {
       const location = await getGeolocationData();
-      const event = { 
-        eventType: 'page_view', 
-        page_path: url, 
+      const event = {
+        eventType: 'page_view',
+        page_path: url,
         location // Add location only for this specific event
       };
       logToFirestore(event);
@@ -86,21 +86,29 @@ export const logPageViewSpecificSection = (section: string) => {
   }
 };
 
-export const logCvDownload = () => {
-  const event = { eventType: 'cv_download' };
-  // Log to Google Analytics
+export const logCvDownload = (language: string = 'unknown') => {
+  // Log to Google Analytics with language parameter
   analytics.then(analyticsInstance => {
     if (analyticsInstance) {
-      logFirebaseEvent(analyticsInstance, "cv_download");
+      logFirebaseEvent(analyticsInstance, "cv_download", { language });
     }
   });
   gtag.event({
     action: 'cv_download',
     category: 'engagement',
-    label: 'cv_download_button',
+    label: `cv_download_${language}`,
     value: 1
   });
 
-  // Log to Firestore (without location)
-  logToFirestore(event);
+  // Log to Firestore with location and language
+  const logDownloadWithLocation = async () => {
+    const location = await getGeolocationData();
+    const event = {
+      eventType: 'cv_download',
+      language,
+      location
+    };
+    logToFirestore(event);
+  };
+  logDownloadWithLocation();
 };
