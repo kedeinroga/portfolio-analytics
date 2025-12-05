@@ -44,7 +44,7 @@ export function Header() {
   }, []);
 
   const handleDownloadCV = () => {
-    logCvDownload();
+    logCvDownload(locale);
   };
 
   return (

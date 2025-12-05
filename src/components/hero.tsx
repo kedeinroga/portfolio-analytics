@@ -8,10 +8,10 @@ import { logCvDownload } from '@/lib/analytics';
 import { cn } from '@/lib/utils';
 
 export function Hero() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   const handleDownload = () => {
-    logCvDownload();
+    logCvDownload(locale);
   };
 
   return (
