@@ -23,7 +23,8 @@ const skillsList = [
   'First AI',
   'GitFlow',
   'Scrum',
-  'Kanban'
+  'Kanban',
+  'GO'
 ];
 
 export function Skills() {

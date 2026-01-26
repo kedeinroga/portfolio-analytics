@@ -17,7 +17,7 @@
   },
   "about": {
     "title": "About Me",
-    "description": "Software Engineer with experience building scalable and secure applications, ranging from monoliths to microservices and event-driven architectures. Skilled in technologies such as NestJS, Python, Django, Next.js, PostgreSQL, GCP, and AWS, applying Clean Architecture principles, CI/CD, and security best practices. Experienced in API design, third-party integrations, and implementing AI-powered solutions. Recognized for managing end-to-end projects, collaborating with cross-functional teams, and consistently delivering business value."
+    "description": "Software Engineer specializing in creating scalable and secure applications. Expert in TypeScript, Python, Go, and Cloud (GCP/AWS) ecosystems. My approach combines Clean Architecture with the integration of Generative AI to bring real value to the business."
   },
   "skills": {
     "title": "Skills"
@@ -26,6 +26,10 @@
     "title": "Projects",
     "code": "Code",
     "demo": "Demo",
+    "radio-online": {
+      "title": "Online Radio (rradio.online)",
+      "description": "Radio Streaming with Clean Architecture."
+    },
     "medical-appointment-scheduling": {
       "title": "Medical Appointment Scheduling System",
       "description": "A complete web application to schedule, modify, and cancel medical appointments, optimizing the workflow and patient management in health centers."
@@ -60,7 +64,7 @@
         "dates": "May 2025 - Present",
         "description": [
           "Led the complete development of products from ideation to production deployment, ensuring technical quality and achievement of objectives.",
-          "Used modern technologies such as NestJS for the backend and Next.js for the frontend, in a monorepo with clean architecture, integrating artificial intelligence services (First AI) as a central part of the educational proposal."
+          "Use of modern technologies such as NestJS for the backend and Next.js for the frontend, in a monorepo with clean architecture, integrating artificial intelligence services (First AI with OpenAI, Gemini, Ollama, LangChain, N8N) as a central part of the educational proposal. These resulted in a 90% motivation rate in students and high teacher satisfaction in the creation of learning tools."
         ]
       },
       {
@@ -68,16 +72,16 @@
         "role": "Software Engineer",
         "dates": "April 2022 - May 2025",
         "description": [
-          "Developed and integrated services and APIs in Python, Node.js, AWS, and GCP for internal and external system functionalities.",
-          "Developed and maintained a monolith with Python and Django.",
-          "Designed integrations with third-party services using REST and asynchronous events (Pub/Sub).",
-          "Implemented support and automatic onboarding tools for clients and users.",
-          "Coordinated directly with non-technical teams (Support, Customer Success, and Sales) to enable automated and monitorable workflows.",
-          "Backend with NestJS and Google Cloud Platform: Developed, maintained, and deployed backend systems with Clean Architecture, using GCP services.",
-          "Configured microservices with Docker and automated deployment with GitHub Actions, event-based architecture, improving scalability, performance, and adaptability to business needs."
+          "Development and integration of services and APIs in Python, Node.js, AWS, and GCP for internal and external system functionalities.",
+          "Development and maintenance of a monolith with Python and Django.",
+          "Optimization of data pipelines with Serverless, Lambdas, API Gateway, and SNS/SQS, improving customer service efficiency and achieving 80% satisfaction through automated workflows.",
+          "Implementation of support and automatic onboarding tools for clients and users.",
+          "Direct coordination with non-technical teams (Support, Customer Success, and Sales) to enable automated and monitorable workflows, improving CSAT by 80%.",
+          "Backend with NestJS and Google Cloud Platform: Development, maintenance, and deployment of backend systems with Clean Architecture, using GCP services (Cloud Run, Pub/Sub, Cloud Functions, Cloud Storage, Firestore, BigQuery), ensuring high availability during user peaks of 100,000 users per minute.",
+          "Configuration of microservices with Docker and automated deployment with GitHub Actions, event-based architecture, ensuring observability, stability, and resilience."
         ],
         "awards": [
-          "2nd place in Betterfly AI Hackathon 2023 (integration of GPT in benefits search engine)."
+          "2nd place in Betterfly's 2023 AI Hackathon (integration of GPT in benefits search engine), laying the technological foundation for future intelligent search functionalities."
         ]
       },
       {
