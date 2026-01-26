@@ -17,6 +17,12 @@ import { useI18n } from '@/context/i18n';
 
 const projectsData = [
   {
+    id: 'radio-online',
+    tags: ['Go', 'GCP', 'Cloud Run', 'PostgreSQL', 'Supabase', 'Redis', 'Upstash', 'Next.js', 'Expo', 'React Native', 'Vercel'],
+    githubUrl: 'https://github.com/kedeinroga/radio-frontend',
+    liveUrl: 'https://www.rradio.online/',
+  },
+  {
     id: 'medical-appointment-scheduling',
     tags: ['Typescript', 'Serverless Framework', 'Jest', 'Lambda', 'DynamoDB', 'API Gateway', 'SNS', 'SQS', 'EventBridge', 'RDS', 'GitHub Actions', 'Hexagonal/Clean Architecture'],
     githubUrl: 'https://github.com/kedeinroga/medical-appointment-scheduling',
