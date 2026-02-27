@@ -3,7 +3,7 @@ import { useState, useEffect, type RefObject } from 'react';
 import { logPageViewSpecificSection } from '@/lib/analytics';
 
 export function useOnScreen(
-  ref: RefObject<HTMLElement>,
+  ref: RefObject<HTMLElement | null>,
   rootMargin = '0px'
 ): boolean {
   const [isIntersecting, setIntersecting] = useState<boolean>(false);
