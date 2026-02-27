@@ -1,6 +1,13 @@
 {
   "placeholderImages": [
     {
+      "id": "radio-online",
+      "description": "Thumbnail for an online radio streaming project.",
+      "imageUrl": "https://images.unsplash.com/photo-1484704849700-f032a568e944?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "online radio streaming",
+      "sizes": "(min-width: 768px) 50vw, 100vw"
+    },
+    {
       "id": "profilePicture",
       "description": "A professional headshot of Kedein Rodriguez Gatica.",
       "imageUrl": "https://kedeinroga.github.io/portfolio/img/main_photo.png",
