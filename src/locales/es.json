@@ -17,7 +17,7 @@
   },
   "about": {
     "title": "Sobre Mí",
-    "description": "Ingeniero de Software con experiencia en el desarrollo de aplicaciones escalables y seguras, desde monolitos hasta arquitecturas basadas en microservicios y eventos. He trabajado con tecnologías como NestJS, Python, Django, Next.js, PostgreSQL, GCP y AWS, aplicando principios de Clean Architecture, CI/CD y buenas prácticas de seguridad. Con experiencia en diseño de APIs, integraciones con terceros e implementación de soluciones con inteligencia artificial, destaco por mi capacidad de asumir proyectos end-to-end, colaborar con equipos multidisciplinarios y aportar valor real al negocio."
+    "description": "Ingeniero de Software especializado en crear aplicaciones escalables y seguras. Experto en ecosistemas TypeScript, Python, Go y Cloud (GCP/AWS). Mi enfoque combina Clean Architecture con la integración de IA Generativa para aportar valor real al negocio."
   },
   "skills": {
     "title": "Habilidades"
@@ -26,6 +26,10 @@
     "title": "Proyectos",
     "code": "Código",
     "demo": "Demo",
+    "radio-online": {
+      "title": "Radio Online (rradio.online)",
+      "description": "Streaming de Radio con Arquitectura Limpia."
+    },
     "medical-appointment-scheduling": {
       "title": "Sistema de Gestión de Citas Médicas",
       "description": "Aplicación web completa para agendar, modificar y cancelar citas médicas, optimizando el flujo de trabajo y la gestión de pacientes en centros de salud."
@@ -60,7 +64,7 @@
         "dates": "Mayo 2025 - Actualidad",
         "description": [
           "Dirección del desarrollo completo de productos desde la ideación hasta su despliegue en producción, asegurando calidad técnica y cumplimiento de objetivos.",
-          "Uso de tecnologías modernas como NestJS para el backend y Next.js para el frontend, en un monorepo con arquitectura limpia, integrando servicios de inteligencia artificial (First AI) como parte central de la propuesta educativa."
+          "Uso de tecnologías modernas como NestJS para el backend y Next.js para el frontend, en un monorepo con arquitectura limpia, integrando servicios de inteligencia artificial (First AI con OpenAI, Gemini, Ollama, LangChain, N8N) como parte central de la propuesta educativa. Las que resultaron en una tasa de motivación del 90% en los estudiantes y una alta satisfacción docente en la creación de herramientas de aprendizaje."
         ]
       },
       {
@@ -70,14 +74,14 @@
         "description": [
           "Desarrollo e integración de servicios y APIs en Python, Node.js, AWS y GCP, para funcionalidades internas y externas del sistema.",
           "Desarrollo y mantenimiento de monolito con Python y Django.",
-          "Diseño de integraciones con servicios de terceros usando REST y eventos asíncronos (Pub/Sub).",
+          "Optimización de pipelines de datos con Serverless, Lambdas, API Gateway y SNS/SQS, mejorando la eficiencia de la atención al cliente y logrando un 80% de satisfacción mediante flujos automatizados.",
           "Implementación de herramientas de soporte y onboarding automático para clientes y usuarios.",
-          "Coordinación directa con equipos no técnicos (Soporte, Customer Success y Ventas) para habilitar flujos automatizados y monitoreables.",
-          "Backend con NestJS y Google Cloud Platform: Desarrollo, mantenimiento y despliegue de sistemas backend con Clean Architecture, utilizando servicios de GCP.",
-          "Configuración de microservicios con Docker y despliegue automatizado con GitHub Actions, arquitectura basada en eventos, mejorando escalabilidad, rendimiento y adaptabilidad a las necesidades del negocio."
+          "Coordinación directa con equipos no técnicos (Soporte, Customer Success y Ventas) para habilitar flujos automatizados y monitoreables, mejorando el CSAT en un 80%.",
+          "Backend con NestJS y Google Cloud Platform: Desarrollo, mantenimiento y despliegue de sistemas backend con Clean Architecture, utilizando servicios de GCP (Cloud Run, Pub/Sub, Cloud Functions, Cloud Storage, Firestore, BigQuery), garantizando alta disponibilidad en picos de usuarios de 100.000 usuarios por minuto.",
+          "Configuración de microservicios con Docker y despliegue automatizado con GitHub Actions, arquitectura basada en eventos, garantizando la observabilidad, estabilidad y resiliencia."
         ],
         "awards": [
-          "2° lugar en Hackathon de IA de Betterfly 2023 (integración de GPT en buscador de beneficios)."
+          "2° lugar en Hackathon de IA de Betterfly 2023 (integración de GPT en buscador de beneficios), sentando las bases tecnológicas para futuras funcionalidades de búsqueda inteligente."
         ]
       },
       {
