@@ -59,9 +59,18 @@
     "title": "Work Experience",
     "jobs": [
       {
+        "company": "Rumbo",
+        "role": "Sr Full Stack Developer",
+        "dates": "February 2026 - Present",
+        "description": [
+          "Built complete solutions for the core of the subscriptions platform, connecting high-fidelity Next.js interfaces with scalable NestJS architectures, ensuring an efficient and maintainable end-to-end data flow.",
+          "Designed and implemented the recurring subscriptions transactional engine, integrating payment gateways and automating billing-state management in the database, ensuring automated and secure monthly revenue collection."
+        ]
+      },
+      {
         "company": "Nomed",
         "role": "Senior Software Engineer",
-        "dates": "May 2025 - Present",
+        "dates": "May 2025 - February 2026",
         "description": [
           "Led the complete development of products from ideation to production deployment, ensuring technical quality and achievement of objectives.",
           "Use of modern technologies such as NestJS for the backend and Next.js for the frontend, in a monorepo with clean architecture, integrating artificial intelligence services (First AI with OpenAI, Gemini, Ollama, LangChain, N8N) as a central part of the educational proposal. These resulted in a 90% motivation rate in students and high teacher satisfaction in the creation of learning tools."
@@ -72,10 +81,8 @@
         "role": "Software Engineer",
         "dates": "April 2022 - May 2025",
         "description": [
-          "Development and integration of services and APIs in Python, Node.js, AWS, and GCP for internal and external system functionalities.",
-          "Development and maintenance of a monolith with Python and Django.",
           "Optimization of data pipelines with Serverless, Lambdas, API Gateway, and SNS/SQS, improving customer service efficiency and achieving 80% satisfaction through automated workflows.",
-          "Implementation of support and automatic onboarding tools for clients and users.",
+          "Implemented automated tools with Python and AWS, integrating SDKs in Swift, Kotlin, and Flutter to streamline user registration. Reduced early-stage support load by 40% through automated case handling.",
           "Direct coordination with non-technical teams (Support, Customer Success, and Sales) to enable automated and monitorable workflows, improving CSAT by 80%.",
           "Backend with NestJS and Google Cloud Platform: Development, maintenance, and deployment of backend systems with Clean Architecture, using GCP services (Cloud Run, Pub/Sub, Cloud Functions, Cloud Storage, Firestore, BigQuery), ensuring high availability during user peaks of 100,000 users per minute.",
           "Configuration of microservices with Docker and automated deployment with GitHub Actions, event-based architecture, ensuring observability, stability, and resilience."
