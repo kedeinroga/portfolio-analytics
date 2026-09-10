@@ -1,85 +1,64 @@
-# Portfolio
-## Next.js, Firebase, and Genkit Starter Project
+# Portfolio — kedein.com
 
-This is a comprehensive starter project built with [Next.js](https://nextjs.org/), a popular React framework, and integrated with [Firebase](https://firebase.google.com/) for backend services and [Genkit](https://firebase.google.com/docs/genkit) for AI-powered features.
+Portfolio personal de Kedein Rodríguez, hecho con [Next.js](https://nextjs.org/) como **export
+estático** (`output: 'export'`) — sin backend, sin autenticación, sin base de datos. Se despliega en
+[Cloudflare Pages](https://pages.cloudflare.com/) y se sirve en el apex `kedein.com`.
 
-This starter provides a solid foundation for building modern, scalable web applications with a rich set of pre-configured tools and libraries.
+## Qué incluye
 
-## Features
+*   **Home** — presentación, experiencia y CV descargable (`/cvs`).
+*   **`/calculadora`** — cronograma de entregas/plazos.
+*   **`/finanzas`** — simulador financiero (PMT, tasa, tabla de amortización).
+*   **Analytics:** Google Analytics 4 vía `gtag`, tracking directo del navegador (sin backend
+    intermedio) — ver `src/lib/gtag.ts`.
+*   **UI:** Tailwind CSS + componentes de Radix UI / `shadcn/ui`.
+*   **i18n:** contexto propio (`src/context/i18n.tsx`), sin librería externa.
 
-*   **Framework:** [Next.js](https://nextjs.org/) 15 with Turbopack for fast development.
-*   **Dashboard:** An analytics dashboard to monitor website traffic and user interactions, built with components from `shadcn/ui`.
-*   **Styling:** [Tailwind CSS](https://tailwindcss.com/) for a utility-first CSS workflow.
-*   **UI Components:** A rich set of accessible and customizable UI components from [Radix UI](https://www.radix-ui.com/) and `shadcn/ui`.
-*   **Backend:** [Firebase](https://firebase.google.com/) integration for services like authentication, database, and hosting.
-*   **AI:** [Genkit](https://firebase.google.com/docs/genkit) for building and managing AI-powered features.
-*   **Authentication:** [NextAuth.js](https://next-auth.js.org/) for robust authentication solutions.
-*   **Forms:** [React Hook Form](https://react-hook-form.com/) and [Zod](https://zod.dev/) for type-safe form validation.
-*   **Linting & Formatting:** Pre-configured with ESLint and Prettier for code quality and consistency.
+No hay dashboard, ni Firebase, ni NextAuth, ni Genkit — ese código se retiró al convertir el
+proyecto a export estático (no eran compatibles con `output: 'export'`).
 
-## Dashboard
+## Desarrollo local
 
-This project includes a comprehensive analytics dashboard that provides insights into website traffic and user behavior. The dashboard is built with `shadcn/ui` components and features a responsive design for optimal viewing on any device.
+Requisitos: Node.js 20+.
 
-Key features of the dashboard include:
+```bash
+npm install
+npm run dev              # http://localhost:9002 (Turbopack)
+```
 
-*   **Real-time Analytics:** Monitor website activity as it happens.
-*   **User Insights:** Gain a deeper understanding of your audience with detailed user data.
-*   **Customizable Widgets:** Tailor the dashboard to your specific needs with a variety of widgets and charts.
+Variables de entorno (opcionales en dev; en producción las inyecta el pipeline de deploy):
 
-## Getting Started
+```
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX   # measurement ID de GA4; sin esto, gtag no se monta
+```
 
-Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+## Scripts
 
-### Prerequisites
+| Script | Qué hace |
+|---|---|
+| `npm run dev` | Servidor de desarrollo con Turbopack. |
+| `npm run build:production` / `build:development` | Genera el export estático en `out/` (`NODE_ENV` correspondiente). |
+| `npm run preview` | Build de producción + sirve `out/` local con `serve`, para validar el export antes de desplegar. |
+| `npm run lint` | ESLint. |
+| `npm run typecheck` | `tsc --noEmit`. Nota: los tests con matchers de `@testing-library/jest-dom` (`toBeInTheDocument`, `toHaveClass`, etc.) fallan aquí por un gap de tipos preexistente — no bloquea el build ni los tests reales, por eso no es parte del gate de CI. |
+| `npm test` / `test:watch` / `test:coverage` | Jest. |
+| `npm run test:ci` | Jest con cobertura, modo CI — es el gate que corre el deploy. |
 
-*   Node.js (v20 or later)
-*   npm or another package manager
+## Deploy
 
-### Installation
+`.github/workflows/deploy-pages.yml`: en cada push a `main` corre `test:ci` y, si pasa, despliega
+`out/` al proyecto Cloudflare Pages `portfolio` con `wrangler pages deploy`. Los PRs publican una
+preview en `*.pages.dev` sin tocar producción.
 
-1.  **Clone the repository:**
-    ```bash
-    git clone <repository-url>
-    cd <repository-name>
-    ```
+Deploy manual (por ejemplo para una validación puntual sin esperar CI):
 
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
+```bash
+npm run build:production
+npx wrangler pages deploy out --project-name=portfolio
+```
 
-3.  **Set up environment variables:**
-    Create a `.env.local` file in the root of your project and add your Firebase configuration and other environment-specific keys.
+Requiere `CLOUDFLARE_API_TOKEN` y `CLOUDFLARE_ACCOUNT_ID` en el entorno (en CI son GitHub Actions
+secrets del repo).
 
-    ```
-    NEXT_PUBLIC_FIREBASE_API_KEY=...
-    NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=...
-    NEXT_PUBLIC_FIREBASE_PROJECT_ID=...
-    NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=...
-    NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=...
-    NEXT_PUBLIC_FIREBASE_APP_ID=...
-    ```
-
-## Available Scripts
-
-In the project directory, you can run the following commands:
-
-*   `npm run dev`
-    Runs the app in development mode with Turbopack. Open [http://localhost:9002](http://localhost:9002) to view it in the browser.
-
-*   `npm run build`
-    Builds the app for production to the `.next` folder.
-
-*   `npm run start`
-    Starts a Next.js production server.
-
-*   `npm run lint`
-    Lints the project files using Next.js' built-in ESLint configuration.
-
-*   `npm run genkit:dev`
-    Starts the Genkit development server to work with your AI flows.
-
-## Deployment
-
-This project is configured for easy deployment to [Firebase Hosting](https://firebase.google.com/docs/hosting). The `apphosting.yaml` file contains the necessary configuration for deploying the Next.js application.
+El DNS y el proyecto Cloudflare Pages de `kedein.com` se administran con Terraform en un repo
+aparte (`portfolio-infra`), independiente de este.
