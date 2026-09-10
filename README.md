@@ -58,7 +58,4 @@ npx wrangler pages deploy out --project-name=portfolio
 ```
 
 Requiere `CLOUDFLARE_API_TOKEN` y `CLOUDFLARE_ACCOUNT_ID` en el entorno (en CI son GitHub Actions
-secrets del repo).
-
-El DNS y el proyecto Cloudflare Pages de `kedein.com` se administran con Terraform en un repo
-aparte (`portfolio-infra`), independiente de este.
+secrets del repo; para deploy manual, exportarlas en la shell antes de correr `wrangler`).
