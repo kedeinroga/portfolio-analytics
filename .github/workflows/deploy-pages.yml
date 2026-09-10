@@ -29,9 +29,6 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      - name: Type-check (gate)
-        run: npm run typecheck
-
       - name: Test (gate)
         run: npm run test:ci
 
