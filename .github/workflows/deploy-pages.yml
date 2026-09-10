@@ -1,0 +1,48 @@
+name: deploy-pages
+
+# Export estático (Next.js) → proyecto Cloudflare Pages "portfolio" (kedein.com).
+# PRs publican preview (*.pages.dev); push a main publica producción.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+  deployments: write
+
+concurrency:
+  group: deploy-pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Type-check (gate)
+        run: npm run typecheck
+
+      - name: Test (gate)
+        run: npm run test:ci
+
+      - name: Build static export
+        run: npm run build:production
+        env:
+          NEXT_PUBLIC_GA_MEASUREMENT_ID: G-C6VHHEWF46
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy out --project-name=portfolio --branch=${{ github.ref_name }}
