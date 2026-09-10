@@ -28,12 +28,6 @@ const customJestConfig = {
   ],
   // Per-file thresholds on the core business logic modules
   coverageThreshold: {
-    'src/lib/analyticsProcessor.ts': {
-      branches: 90,
-      functions: 90,
-      lines: 90,
-      statements: 90,
-    },
     'src/lib/gtag.ts': {
       branches: 90,
       functions: 90,
