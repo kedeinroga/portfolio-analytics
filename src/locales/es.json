@@ -26,6 +26,10 @@
     "title": "Proyectos",
     "code": "Código",
     "demo": "Demo",
+    "chapa": {
+      "title": "Chapa — Finanzas personales y de negocio",
+      "description": "Plataforma de finanzas para Perú: captura automáticamente los pagos de Yape y Plin desde las notificaciones de Android y los correos del banco, y los consolida en dashboards diferenciados para individuos y emprendedores, con presupuestos por categoría, multi-moneda y cierre de caja por lotes."
+    },
     "radio-online": {
       "title": "Radio Online (rradio.online)",
       "description": "Streaming de Radio con Arquitectura Limpia."
