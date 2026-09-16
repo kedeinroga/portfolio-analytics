@@ -17,6 +17,12 @@ import { useI18n } from '@/context/i18n';
 
 const projectsData = [
   {
+    id: 'chapa',
+    tags: ['TypeScript', 'NestJS', 'Prisma', 'PostgreSQL', 'Neon', 'React Native', 'Expo', 'Kotlin', 'GCP', 'Cloud Run', 'Terraform', 'Cloudflare', 'GitHub Actions', 'Clean Architecture'],
+    githubUrl: null,
+    liveUrl: 'https://finance.kedein.com',
+  },
+  {
     id: 'radio-online',
     tags: ['Go', 'GCP', 'Cloud Run', 'PostgreSQL', 'Supabase', 'Redis', 'Upstash', 'Next.js', 'Expo', 'React Native', 'Vercel'],
     githubUrl: 'https://github.com/kedeinroga/radio-frontend',
@@ -107,16 +113,18 @@ export function Projects() {
                 </div>
               </CardContent>
               <CardFooter className="flex gap-2">
-                <Button variant="outline" size="sm" asChild>
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Github className="mr-2 h-4 w-4" />
-                    {t('projects.code')}
-                  </a>
-                </Button>
+                {project.githubUrl && (
+                  <Button variant="outline" size="sm" asChild>
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github className="mr-2 h-4 w-4" />
+                      {t('projects.code')}
+                    </a>
+                  </Button>
+                )}
                 {project.liveUrl && (
                   <Button size="sm" asChild>
                     <a

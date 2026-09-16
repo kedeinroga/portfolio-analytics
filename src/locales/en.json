@@ -26,6 +26,10 @@
     "title": "Projects",
     "code": "Code",
     "demo": "Demo",
+    "chapa": {
+      "title": "Chapa — Personal & Business Finance",
+      "description": "Fintech platform for Peru: it automatically captures Yape and Plin payments from Android notifications and bank emails, consolidating them into dashboards tailored to individuals and small business owners, with category budgets, multi-currency support and daily cash close."
+    },
     "radio-online": {
       "title": "Online Radio (rradio.online)",
       "description": "Radio Streaming with Clean Architecture."
