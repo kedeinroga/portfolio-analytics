@@ -3,6 +3,7 @@
     "about": "About Me",
     "skills": "Skills",
     "projects": "Projects",
+    "tools": "Tools",
     "experience": "Experience",
     "contact": "Contact Me",
     "downloadCV": "Download CV",
@@ -57,6 +58,19 @@
     "econuni-2016": {
       "title": "ECON UNI Congress Official Website (2016)",
       "description": "Official website for the Electronic Engineering Congress (ECONUNI) of the National University of Engineering (UNI) from 2016, developed using the MVC pattern."
+    }
+  },
+  "tools": {
+    "title": "Tools",
+    "subtitle": "Free utilities I build and maintain on kedein.com. They run entirely in your browser — no data is sent or stored.",
+    "open": "Open tool",
+    "finanzas": {
+      "title": "Loan Simulator",
+      "description": "Work out a loan payment, uncover the real interest rate behind a given installment, and simulate extra principal payments to see how many months and how much interest you save. Includes a printable amortization table."
+    },
+    "calculadora": {
+      "title": "Deadline Calculator",
+      "description": "Turns day-based terms into exact due dates from a start date. Built to avoid missing a contractual delivery; produces a print-ready schedule."
     }
   },
   "experience": {

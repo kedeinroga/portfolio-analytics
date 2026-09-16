@@ -31,6 +31,7 @@ export function Header() {
     { name: 'header.about', href: '#about' },
     { name: 'header.skills', href: '#skills' },
     { name: 'header.projects', href: '#projects' },
+    { name: 'header.tools', href: '#tools' },
     { name: 'header.experience', href: '#experience' },
     { name: 'header.contact', href: '#contact' },
   ];

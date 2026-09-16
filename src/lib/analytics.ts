@@ -13,6 +13,15 @@ export const logPageViewSpecificSection = (section: string) => {
   });
 };
 
+export const logToolOpen = (tool: string) => {
+  gtag.event({
+    action: 'tool_open',
+    category: 'engagement',
+    label: `tool_${tool}`,
+    value: 1
+  });
+};
+
 export const logCvDownload = (language: string = 'unknown') => {
   gtag.event({
     action: 'cv_download',

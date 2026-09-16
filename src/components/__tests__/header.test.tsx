@@ -48,6 +48,14 @@ describe('Header', () => {
     expect(screen.getByRole('navigation')).toBeInTheDocument()
   })
 
+  it('should link to the tools section', () => {
+    render(<Header />)
+    // Desktop nav + mobile sheet render the same link list
+    const toolsLinks = screen.getAllByRole('link', { name: 'Tools' })
+    expect(toolsLinks.length).toBeGreaterThan(0)
+    toolsLinks.forEach(link => expect(link).toHaveAttribute('href', '#tools'))
+  })
+
   it('should render Download CV button', () => {
     render(<Header />)
     // There may be multiple (desktop + mobile)
