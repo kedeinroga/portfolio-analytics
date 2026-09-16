@@ -3,6 +3,7 @@
     "about": "Sobre Mí",
     "skills": "Habilidades",
     "projects": "Proyectos",
+    "tools": "Herramientas",
     "experience": "Experiencia",
     "contact": "Contáctame",
     "downloadCV": "Descargar CV",
@@ -57,6 +58,19 @@
     "econuni-2016": {
       "title": "Web Oficial de Congreso ECON UNI (2016)",
       "description": "Sitio web oficial del Congreso de Ingeniería Electrónica (ECONUNI) de la Universidad Nacional de Ingeniería (UNI) del año 2016, desarrollado bajo el patrón MVC."
+    }
+  },
+  "tools": {
+    "title": "Herramientas",
+    "subtitle": "Utilidades gratuitas que uso y mantengo en kedein.com. Corren enteras en tu navegador: no se envía ni se guarda ningún dato.",
+    "open": "Abrir herramienta",
+    "finanzas": {
+      "title": "Simulador Financiero",
+      "description": "Calcula la cuota de un préstamo, descubre la tasa real que te están cobrando a partir de la cuota y simula abonos a capital para ver cuántos meses e intereses te ahorras. Incluye tabla de amortización imprimible."
+    },
+    "calculadora": {
+      "title": "Calculadora de Plazos",
+      "description": "Convierte plazos en días en fechas límite exactas a partir de una fecha de inicio. Pensada para no pasarse de una entrega contractual; genera un cronograma listo para imprimir."
     }
   },
   "experience": {
