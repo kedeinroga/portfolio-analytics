@@ -20,7 +20,7 @@ const projectsData = [
     id: 'chapa',
     tags: ['TypeScript', 'NestJS', 'Prisma', 'PostgreSQL', 'Neon', 'React Native', 'Expo', 'Kotlin', 'GCP', 'Cloud Run', 'Terraform', 'Cloudflare', 'GitHub Actions', 'Clean Architecture'],
     githubUrl: null,
-    liveUrl: 'https://finance.kedein.com',
+    liveUrl: 'https://landing-finance.kedein.com/',
   },
   {
     id: 'radio-online',
