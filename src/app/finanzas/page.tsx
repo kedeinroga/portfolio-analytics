@@ -219,7 +219,7 @@ export default function FinanzasPage() {
 
         {/* Print header (only shown when printing) */}
         <div className="hidden print:block mb-6 border-b pb-4">
-          <h1 className="text-2xl font-bold">Simulador Financiero — KRG</h1>
+          <h1 className="text-2xl font-bold">Simulador Financiero KRG</h1>
           <p>
             <strong>Capital:</strong> ${fmt(amount)} &nbsp;|&nbsp;
             <strong>Plazo Original:</strong> {months} meses
@@ -531,7 +531,7 @@ export default function FinanzasPage() {
                                     +${fmt(row.extra)}
                                   </Badge>
                                 ) : (
-                                  <span className="text-muted-foreground">—</span>
+                                  <span className="text-muted-foreground">-</span>
                                 )}
                               </td>
                               <td className="px-4 py-2.5 font-semibold print:px-2">${fmt(row.balance)}</td>
