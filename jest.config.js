@@ -18,6 +18,7 @@ const customJestConfig = {
     '!src/**/*.d.ts',
     '!src/**/*.stories.{js,jsx,ts,tsx}',
     '!src/**/__tests__/**',
+    '!src/**/test-fixtures.ts',
     '!src/types/**',
     '!src/components/ui/**',   // Radix UI wrappers - not business logic
     '!src/ai/**',              // Genkit AI layer
