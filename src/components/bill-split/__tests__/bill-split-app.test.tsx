@@ -1,26 +1,29 @@
 import { render, screen, fireEvent, within } from '@testing-library/react';
-import { RepartoApp } from '../reparto-app';
+import { BillSplitApp } from '../bill-split-app';
 
 const click = (name: string | RegExp) => fireEvent.click(screen.getByRole('button', { name }));
-const escribir = (label: string | RegExp, valor: string) =>
-  fireEvent.change(screen.getByLabelText(label), { target: { value: valor } });
+const typeInto = (label: string | RegExp, value: string) =>
+  fireEvent.change(screen.getByLabelText(label), { target: { value: value } });
 
-describe('asistente de reparto', () => {
-  beforeEach(() => window.localStorage.clear());
+describe('bill split wizard', () => {
+  beforeEach(() => {
+    window.localStorage.clear();
+    window.scrollTo = jest.fn(); // not implemented in jsdom
+  });
 
-  it('caso dorado de punta a punta (luz, método A)', () => {
-    render(<RepartoApp />);
+  it('golden case end to end (electricity, OWN_CONSUMPTION)', () => {
+    render(<BillSplitApp />);
     click('Empezar');
     expect(screen.getByText('Paso 1 de 5')).toBeInTheDocument();
     click(/^Luz/);
-    escribir(/Total a pagar/, '400');
-    escribir(/medidor general/, '320');
+    typeInto(/Total a pagar/, '400');
+    typeInto(/medidor general/, '320');
     click('Siguiente');
 
     // 4 cuartos: ya hay 2, agregar 2 más
     click('Agregar otro cuarto');
     click('Agregar otro cuarto');
-    const lecturas = [
+    const readings = [
       [1200, 1290],
       [800, 860],
       [500, 590],
@@ -28,7 +31,7 @@ describe('asistente de reparto', () => {
     ];
     const ant = screen.getAllByLabelText('Lectura anterior');
     const act = screen.getAllByLabelText('Lectura actual');
-    lecturas.forEach(([a, b], i) => {
+    readings.forEach(([a, b], i) => {
       fireEvent.change(ant[i], { target: { value: String(a) } });
       fireEvent.change(act[i], { target: { value: String(b) } });
     });
@@ -46,11 +49,11 @@ describe('asistente de reparto', () => {
     expect(wa.getAttribute('href')).toMatch(/^https:\/\/wa\.me\/\?text=Hola%20Cuarto%201/);
   });
 
-  it('muestra error amable si la lectura actual es menor', () => {
-    render(<RepartoApp />);
+  it('shows a friendly error when the current reading is lower', () => {
+    render(<BillSplitApp />);
     click('Empezar');
     click(/^Luz/);
-    escribir(/Total a pagar/, '100');
+    typeInto(/Total a pagar/, '100');
     click('Siguiente');
     const ant = screen.getAllByLabelText('Lectura anterior');
     const act = screen.getAllByLabelText('Lectura actual');
@@ -63,18 +66,18 @@ describe('asistente de reparto', () => {
     expect(screen.getByRole('alert')).toHaveTextContent('menor que la anterior (90)');
   });
 
-  it('funciona con localStorage bloqueado', () => {
+  it('works with localStorage blocked', () => {
     jest.spyOn(Storage.prototype, 'getItem').mockImplementation(() => {
       throw new Error('bloqueado');
     });
     jest.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
       throw new Error('bloqueado');
     });
-    render(<RepartoApp />);
+    render(<BillSplitApp />);
     expect(screen.getByText('Reparte el recibo entre tus inquilinos')).toBeInTheDocument();
     click('Empezar');
     click(/Internet/);
-    escribir(/Total a pagar/, '90');
+    typeInto(/Total a pagar/, '90');
     click('Siguiente');
     click('Siguiente');
     click('Calcular');
