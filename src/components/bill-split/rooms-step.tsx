@@ -69,7 +69,7 @@ export function RoomsStep({ form, isMetered, onChange, onChangeRoom }: RoomsStep
                 type="checkbox"
                 checked={room.participates}
                 onChange={(event) => onChangeRoom(room.id, { participates: event.target.checked })}
-                className="h-8 w-8 accent-blue-800"
+                className="h-8 w-8 accent-brand"
               />
               Participa en el pago
             </label>
@@ -96,7 +96,7 @@ export function RoomsStep({ form, isMetered, onChange, onChangeRoom }: RoomsStep
             type="checkbox"
             checked={form.includeOwner}
             onChange={(event) => onChange({ includeOwner: event.target.checked })}
-            className="h-8 w-8 shrink-0 accent-blue-800"
+            className="h-8 w-8 shrink-0 accent-brand"
           />
           Yo también pago mi parte (dividir con el propietario)
         </label>

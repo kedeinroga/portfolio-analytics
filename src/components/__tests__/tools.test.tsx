@@ -20,6 +20,7 @@ jest.mock('@/lib/analytics', () => ({
 jest.mock('lucide-react', () => ({
   ArrowRight: () => <svg data-testid="arrow-icon" />,
   CalendarCheck: () => <svg data-testid="calendar-icon" />,
+  Receipt: () => <svg data-testid="receipt-icon" />,
   TrendingDown: () => <svg data-testid="trending-icon" />,
 }))
 
@@ -37,6 +38,7 @@ describe('Tools', () => {
     render(<Tools />)
     expect(screen.getByText('Loan Simulator')).toBeInTheDocument()
     expect(screen.getByText('Deadline Calculator')).toBeInTheDocument()
+    expect(screen.getByText('Utility Bill Splitter')).toBeInTheDocument()
   })
 
   it('should link each tool to its internal route', () => {
@@ -45,6 +47,7 @@ describe('Tools', () => {
     expect(links.map(link => link.getAttribute('href'))).toEqual([
       '/finanzas',
       '/calculadora',
+      '/reparto',
     ])
   })
 
@@ -59,12 +62,19 @@ describe('Tools', () => {
     render(<Tools />)
     expect(screen.getByTestId('trending-icon')).toBeInTheDocument()
     expect(screen.getByTestId('calendar-icon')).toBeInTheDocument()
+    expect(screen.getByTestId('receipt-icon')).toBeInTheDocument()
   })
 
   it('should track the tool that was opened', () => {
     render(<Tools />)
     fireEvent.click(screen.getAllByRole('link')[0])
     expect(logToolOpen).toHaveBeenCalledWith('finanzas')
+  })
+
+  it('should track the bill splitter when it is opened', () => {
+    render(<Tools />)
+    fireEvent.click(screen.getAllByRole('link')[2])
+    expect(logToolOpen).toHaveBeenCalledWith('reparto')
   })
 
   it('should track each tool separately', () => {

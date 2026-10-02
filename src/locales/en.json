@@ -71,6 +71,10 @@
     "calculadora": {
       "title": "Deadline Calculator",
       "description": "Turns day-based terms into exact due dates from a start date. Built to avoid missing a contractual delivery; produces a print-ready schedule."
+    },
+    "reparto": {
+      "title": "Utility Bill Splitter",
+      "description": "Splits an electricity, water or internet bill among tenants, based on each room's meter readings or in equal parts. Shows how each amount was calculated and shares it by WhatsApp or PDF. In Spanish, for landlords in Peru."
     }
   },
   "experience": {

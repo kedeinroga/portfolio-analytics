@@ -23,8 +23,8 @@ export function ServiceStep({ selected, onSelect }: ServiceStepProps) {
             type="button"
             onClick={() => onSelect(id)}
             aria-pressed={selected === id}
-            className={`min-h-24 rounded-xl border-2 p-5 text-left focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-blue-950 ${
-              selected === id ? 'border-blue-800 bg-blue-50' : 'border-slate-600 bg-white hover:bg-slate-100'
+            className={`min-h-24 rounded-xl border-2 p-5 text-left focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-brand-hover ${
+              selected === id ? 'border-brand bg-secondary' : 'border-slate-600 bg-white hover:bg-secondary'
             }`}
           >
             <span className="block text-2xl font-bold">{title}</span>

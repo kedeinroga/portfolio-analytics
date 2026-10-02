@@ -116,15 +116,22 @@ export function BillSplitApp() {
   };
 
   return (
-    <div lang="es" className="min-h-screen bg-white text-lg text-slate-900 print:min-h-0">
+    <div lang="es" className="min-h-screen bg-background font-body text-lg text-foreground print:min-h-0">
       <div
         ref={containerRef}
         className="mx-auto flex min-h-screen max-w-2xl flex-col gap-6 px-4 py-6 print:min-h-0 print:max-w-none"
       >
-        <header className="print:hidden">
-          <Link href="/" className="text-base font-semibold text-blue-900 underline">
-            ← Volver a kedein.com
-          </Link>
+        <header className="border-b-4 border-accent pb-3 print:border-b print:border-border">
+          <div className="flex items-center justify-between gap-4">
+            <Link
+              href="/"
+              aria-label="KRG, volver al inicio de kedein.com"
+              className="rounded text-2xl font-bold text-primary focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-brand-hover print:no-underline"
+            >
+              KRG
+            </Link>
+            <p className="text-base font-semibold text-slate-700">Reparto de recibos</p>
+          </div>
         </header>
 
         <main className="flex flex-1 flex-col gap-6">
@@ -188,9 +195,17 @@ export function BillSplitApp() {
           )}
         </main>
 
-        <footer className="border-t-2 border-slate-300 pt-4 text-base text-slate-700">
-          Esta herramienta ayuda a calcular. Usa solo montos que reflejen el recibo y acuerda con tus inquilinos el método de
-          reparto.
+        <footer className="flex flex-col gap-3 border-t-2 border-border pt-4 text-base text-slate-700">
+          <p>
+            Esta herramienta ayuda a calcular. Usa solo montos que reflejen el recibo y acuerda con tus inquilinos el método
+            de reparto.
+          </p>
+          <p>
+            © {new Date().getFullYear()} Kedein Rodriguez Gatica ·{' '}
+            <Link href="/" className="font-semibold text-brand underline">
+              kedein.com
+            </Link>
+          </p>
         </footer>
       </div>
     </div>
