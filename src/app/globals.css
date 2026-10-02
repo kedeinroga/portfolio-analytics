@@ -29,6 +29,9 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    /* Darker shade of --primary for text and buttons that must meet WCAG AA/AAA (used by /reparto). */
+    --brand: 212 40% 24%;
+    --brand-hover: 212 40% 18%;
     --sidebar-background: 213 33% 98%;
     --sidebar-foreground: 222 47% 11%;
     --sidebar-primary: 210 22% 53%;

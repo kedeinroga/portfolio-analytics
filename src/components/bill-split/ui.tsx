@@ -7,11 +7,11 @@ import * as React from 'react';
  */
 
 const baseButton =
-  'inline-flex min-h-14 items-center justify-center gap-2 rounded-lg px-6 py-3 text-lg font-semibold text-center transition-colors focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-blue-950 disabled:opacity-60';
+  'inline-flex min-h-14 items-center justify-center gap-2 rounded-lg px-6 py-3 text-lg font-semibold text-center transition-colors focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-brand-hover disabled:opacity-60';
 
 const buttonVariants = {
-  primary: 'bg-blue-800 text-white hover:bg-blue-900',
-  secondary: 'border-2 border-slate-700 bg-white text-slate-900 hover:bg-slate-100',
+  primary: 'bg-brand text-white hover:bg-brand-hover',
+  secondary: 'border-2 border-slate-700 bg-white text-foreground hover:bg-secondary',
   whatsapp: 'bg-green-800 text-white hover:bg-green-900',
 } as const;
 
@@ -45,7 +45,7 @@ export function TextField({ id, label, help, ...input }: TextFieldProps) {
       <input
         id={id}
         aria-describedby={helpId}
-        className="h-14 w-full rounded-lg border-2 border-slate-600 bg-white px-4 text-lg text-slate-900 placeholder:text-slate-500 focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-blue-950"
+        className="h-14 w-full rounded-lg border-2 border-slate-600 bg-white px-4 text-lg text-foreground placeholder:text-slate-500 focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-2 focus-visible:outline-brand-hover"
         {...input}
       />
       {help && (
@@ -58,7 +58,7 @@ export function TextField({ id, label, help, ...input }: TextFieldProps) {
 }
 
 export function Panel({ children, className = '' }: { children: React.ReactNode; className?: string }) {
-  return <div className={`rounded-xl border-2 border-slate-300 bg-white p-5 ${className}`}>{children}</div>;
+  return <div className={`rounded-xl border-2 border-border bg-card p-5 ${className}`}>{children}</div>;
 }
 
 export function Notice({ children, className = '' }: { children: React.ReactNode; className?: string }) {
@@ -90,7 +90,7 @@ export function ErrorList({ errors }: { errors: string[] }) {
 /** Each step's title. The wizard moves focus here on every step change. */
 export function StepHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h1 data-step-heading tabIndex={-1} className="text-3xl font-bold leading-tight outline-none">
+    <h1 data-step-heading tabIndex={-1} className="font-headline text-3xl font-bold leading-tight outline-none">
       {children}
     </h1>
   );

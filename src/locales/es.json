@@ -71,6 +71,10 @@
     "calculadora": {
       "title": "Calculadora de Plazos",
       "description": "Convierte plazos en días en fechas límite exactas a partir de una fecha de inicio. Pensada para no pasarse de una entrega contractual; genera un cronograma listo para imprimir."
+    },
+    "reparto": {
+      "title": "Reparto de Recibos",
+      "description": "Reparte el recibo de luz, agua o internet entre tus inquilinos, según el medidor de cada cuarto o en partes iguales. Muestra cómo se calculó cada monto y lo comparte por WhatsApp o PDF. Pensada para propietarios en Perú."
     }
   },
   "experience": {

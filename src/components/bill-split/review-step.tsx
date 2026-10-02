@@ -19,7 +19,7 @@ interface SummaryRowProps {
 
 function SummaryRow({ label, value, editStep, onEdit }: SummaryRowProps) {
   return (
-    <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-300 py-3 last:border-0">
+    <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border py-3 last:border-0">
       <div>
         <p className="text-base text-slate-700">{label}</p>
         <p className="text-xl font-bold">{value}</p>
@@ -97,7 +97,7 @@ export function ReviewStep({ form, service, onMethodChange, onEdit }: ReviewStep
               <label
                 key={id}
                 className={`flex min-h-14 items-start gap-4 rounded-xl border-2 p-4 ${
-                  method === id ? 'border-blue-800 bg-blue-50' : 'border-slate-600'
+                  method === id ? 'border-brand bg-secondary' : 'border-slate-600'
                 } ${disabled ? 'opacity-70' : 'cursor-pointer'}`}
               >
                 <input
@@ -107,7 +107,7 @@ export function ReviewStep({ form, service, onMethodChange, onEdit }: ReviewStep
                   checked={method === id}
                   disabled={disabled}
                   onChange={() => onMethodChange(id)}
-                  className="mt-1 h-6 w-6 shrink-0 accent-blue-800"
+                  className="mt-1 h-6 w-6 shrink-0 accent-brand"
                 />
                 <span>
                   {text}

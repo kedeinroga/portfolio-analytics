@@ -9,6 +9,7 @@ estático** (`output: 'export'`) — sin backend, sin autenticación, sin base d
 *   **Home** — presentación, experiencia y CV descargable (`/cvs`).
 *   **`/calculadora`** — cronograma de entregas/plazos.
 *   **`/finanzas`** — simulador financiero (PMT, tasa, tabla de amortización).
+*   **`/reparto`** — reparto de recibos de luz, agua o internet entre inquilinos (asistente paso a paso, en español).
 *   **Analytics:** Google Analytics 4 vía `gtag`, tracking directo del navegador (sin backend
     intermedio) — ver `src/lib/gtag.ts`.
 *   **UI:** Tailwind CSS + componentes de Radix UI / `shadcn/ui`.

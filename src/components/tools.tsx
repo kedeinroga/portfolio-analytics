@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, CalendarCheck, TrendingDown } from 'lucide-react';
+import { ArrowRight, CalendarCheck, Receipt, TrendingDown } from 'lucide-react';
 import { FadeIn } from './fade-in';
 import { useI18n } from '@/context/i18n';
 import { logToolOpen } from '@/lib/analytics';
@@ -24,6 +24,11 @@ const toolsData = [
     id: 'calculadora',
     href: '/calculadora',
     Icon: CalendarCheck,
+  },
+  {
+    id: 'reparto',
+    href: '/reparto',
+    Icon: Receipt,
   },
 ];
 

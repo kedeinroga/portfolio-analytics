@@ -103,7 +103,7 @@ export function ResultStep({ calculation, onEditData, onRestart }: ResultStepPro
                 </ActionButton>
                 <div
                   id={`formula-${room.id}`}
-                  className={`${isExpanded ? 'block' : 'hidden print:block'} rounded-lg bg-slate-100 p-4`}
+                  className={`${isExpanded ? 'block' : 'hidden print:block'} rounded-lg bg-secondary p-4`}
                 >
                   <p className="mb-2 font-bold">Así se calculó:</p>
                   <ol className="list-decimal space-y-2 pl-6">
