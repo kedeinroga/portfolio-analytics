@@ -1,0 +1,19 @@
+# Kedein Rodriguez Gatica
+
+> Software Engineer specializing in scalable and secure applications. Expert in TypeScript, Python, Go, and Cloud (GCP/AWS) ecosystems. Combines Clean Architecture with the integration of Generative AI to bring real value to the business.
+
+## Profile
+- [Portfolio](https://kedein.com): projects, skills, experience and contact
+- [LinkedIn](https://www.linkedin.com/in/kedein-rodriguez-gatica/)
+- [GitHub](https://github.com/kedeinroga)
+- [CV (English)](https://kedein.com/cvs/cv-kedein-rodriguez-en.pdf)
+
+## Projects
+- [Chapa](https://landing-finance.kedein.com/): fintech platform for Peru that captures Yape and Plin payments and consolidates them into personal and small-business finance dashboards
+- [Online Radio](https://www.rradio.online/): radio streaming built with Clean Architecture ([code](https://github.com/kedeinroga/radio-frontend))
+- [Medical Appointment Scheduling](https://github.com/kedeinroga/medical-appointment-scheduling): serverless AWS backend (Lambda, DynamoDB, SNS, SQS, EventBridge) with hexagonal architecture
+
+## Free tools (Spanish)
+- [Reparto de recibos](https://kedein.com/reparto): split a utility bill between tenants, showing how each amount was calculated
+- [Calculadora de plazos](https://kedein.com/calculadora): calculate exact deadline dates to avoid penalties
+- [Simulador financiero](https://kedein.com/finanzas): calculate installments, uncover hidden rates and simulate extra payments to principal
