@@ -8,6 +8,7 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
+  alternates: { canonical: '/reparto' },
   // Next.js replaces (does not merge) openGraph from the root layout, so the brand image is repeated here.
   openGraph: {
     title: TITLE,
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [{ url: 'https://kedein.com/avatar.png', width: 800, height: 600, alt: 'KRG' }],
   },
+  twitter: { card: 'summary', title: TITLE, description: DESCRIPTION, images: ['https://kedein.com/avatar.png'] },
 };
 
 export default function BillSplitPage() {
